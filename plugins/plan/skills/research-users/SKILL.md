@@ -92,8 +92,8 @@ Organize findings before proceeding. Do not draft the document until research is
 
 Read [references/discovery-document-guide.md](references/discovery-document-guide.md) for section-by-section writing guidance, templates, and examples.
 
-1. Create the output directory if needed: `docs/product/research/`
-2. Write the document at `docs/product/research/<slug-name>.md`
+1. Create the output directory if needed: `.product/research/`
+2. Write the document at `.product/research/<slug-name>.md`
 3. Follow this document structure:
 
 ```

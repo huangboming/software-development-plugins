@@ -1,6 +1,6 @@
 # Tech Spec Template
 
-Use this template when generating `docs/development/specs/<feature-name>.md` in Step 7. After writing, review it in Step 8 and reconcile findings in Step 9.
+Use this template when generating `.product/development/specs/<feature-name>.md` in Step 7. After writing, review it in Step 8 and reconcile findings in Step 9.
 
 **Guiding principle:** this is a **design** document, not an implementation document. Explain structure, behavior, and decisions. Visualize with mermaid. Do not paste function bodies, full DDL, or large payload examples — describe shapes in tables.
 

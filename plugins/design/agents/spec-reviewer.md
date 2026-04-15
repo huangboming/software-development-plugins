@@ -16,7 +16,7 @@ Critically review the spec file at the path provided, focused on the single axis
 
 The invoking prompt will include:
 
-- **Spec path** — absolute path to the spec markdown (typically `docs/development/specs/<feature>.md`)
+- **Spec path** — absolute path to the spec markdown (typically `.product/development/specs/<feature>.md`)
 - **Axis** — one of `completeness`, `architecture`, or `risk`
 - **Scope** (optional) — `backend`, `frontend`, or `full-stack`; infer from the spec header if absent
 

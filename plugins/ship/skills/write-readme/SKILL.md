@@ -46,7 +46,7 @@ If ambiguous, ask.
 ## Edge Cases
 
 If the project has no code yet:
-  → Minimal README with name, description, goals, "Coming Soon." Pull from `docs/product/prd/` if available.
+  → Minimal README with name, description, goals, "Coming Soon." Pull from `.product/prd/` if available.
 
 If the user wants implementation details:
   → READMEs are for users. Suggest linking to `docs/development/architecture/`. Defer if they insist.

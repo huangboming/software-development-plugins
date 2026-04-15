@@ -49,7 +49,7 @@ Order: breaking changes first, then by user impact. Identify the top 3-5 changes
 
 Read [release-notes-template.md](references/release-notes-template.md) and [writing-guide.md](references/writing-guide.md).
 
-1. Create `docs/product/release-notes/v<version>.md` using the template.
+1. Create `docs/release-notes/v<version>.md` using the template.
 2. Write a 1-2 sentence overview framing the release theme.
 3. Write the highlights section — 3-5 most impactful changes with benefit descriptions.
 4. Translate every entry to user-benefit language (see translation examples in writing-guide.md).

@@ -20,10 +20,10 @@
 
 | Checked Against | Findings |
 |----------------|----------|
-| Backlog (`docs/product/backlog/backlog.md`) | [No matches / Overlaps with: <item> — <how it relates>] |
-| PRDs (`docs/product/prd/`) | [No matches / Related to: <prd> — <how it relates>] |
-| Research (`docs/product/research/`) | [No matches / Covered in: <doc> — <how it relates>] |
-| Intakes (`docs/product/intakes/`) | [No matches / Similar to: <intake> — <how it relates>] |
+| Backlog (`.product/backlog/backlog.md`) | [No matches / Overlaps with: <item> — <how it relates>] |
+| PRDs (`.product/prd/`) | [No matches / Related to: <prd> — <how it relates>] |
+| Research (`.product/research/`) | [No matches / Covered in: <doc> — <how it relates>] |
+| Intakes (`.product/intakes/`) | [No matches / Similar to: <intake> — <how it relates>] |
 
 ## Assessment
 
@@ -47,7 +47,7 @@
 | support-ticket | Pattern emerging from support issues |
 | market-signal | Market trends, analyst reports, industry shifts |
 | internal-observation | Team-identified gap, tech debt surfacing as user pain, operational insight |
-| user-research | Finding from a discovery document (`docs/product/research/`) |
+| user-research | Finding from a discovery document (`.product/research/`) |
 | competitor-move | Competitor launched a feature, changed pricing, or shifted strategy |
 | regulatory | Legal, compliance, or regulatory requirement |
 | other | Anything not covered above — add a brief note |

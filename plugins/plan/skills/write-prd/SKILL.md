@@ -7,8 +7,8 @@ description: "Generate product-level or feature-level PRDs. Triggers: 'write a P
 
 ## References
 
-- [references/product-prd-template.md](references/product-prd-template.md) — Template for product-level PRDs (`docs/product/prd/prd.md`). Read when drafting a product-level PRD.
-- [references/feature-prd-template.md](references/feature-prd-template.md) — Template for feature-level PRDs (`docs/product/prd/<feature-name>/v<N>.md`). Read when drafting a feature-level PRD.
+- [references/product-prd-template.md](references/product-prd-template.md) — Template for product-level PRDs (`.product/prd/prd.md`). Read when drafting a product-level PRD.
+- [references/feature-prd-template.md](references/feature-prd-template.md) — Template for feature-level PRDs (`.product/prd/<feature-name>/v<N>.md`). Read when drafting a feature-level PRD.
 - [references/writing-guide.md](references/writing-guide.md) — Working Backwards approach, user story and acceptance criteria guidance, SMART metrics, quality checklists. Read before drafting (Step 3) and during review (Step 4).
 - [references/codebase-exploration.md](references/codebase-exploration.md) — Exploration priority order and code-pattern-to-requirement translation table. Read only for the **Codebase Exploration** workflow.
 
@@ -25,14 +25,14 @@ PRD creation involves these steps:
 
 **PRD level:**
 
-- User describes a product initiative, multi-feature effort, or asks for a "product PRD" → **Product-level PRD** (output: `docs/product/prd/prd.md`)
-- User describes a specific feature, or asks to "spec out this feature" → **Feature-level PRD** (output: `docs/product/prd/<feature-name>/v1.md`)
+- User describes a product initiative, multi-feature effort, or asks for a "product PRD" → **Product-level PRD** (output: `.product/prd/prd.md`)
+- User describes a specific feature, or asks to "spec out this feature" → **Feature-level PRD** (output: `.product/prd/<feature-name>/v1.md`)
 - If ambiguous, ask: "Is this a product-level spec covering the full initiative, or a feature-level spec for one specific capability?"
 
 **Versioning (feature-level PRDs):**
 
-- New feature with no existing PRD → create `docs/product/prd/<feature-name>/v1.md`
-- Revising an existing PRD (significant scope change, pivot, or post-launch rethink) → check `docs/product/prd/<feature-name>/` for existing versions, create the next version (`v2.md`, `v3.md`, etc.). Add a `Supersedes` link to the previous version. Do not modify previous versions.
+- New feature with no existing PRD → create `.product/prd/<feature-name>/v1.md`
+- Revising an existing PRD (significant scope change, pivot, or post-launch rethink) → check `.product/prd/<feature-name>/` for existing versions, create the next version (`v2.md`, `v3.md`, etc.). Add a `Supersedes` link to the previous version. Do not modify previous versions.
 - Minor edits (typos, clarifications, updating status) → edit the current version in place.
 
 **Workflow:**
@@ -84,7 +84,7 @@ Proceed to Step 3.
 
 ### Step 2b: Synthesis from Existing Artifacts
 
-1. Read all provided artifacts. Check for existing documents at `docs/product/prd/` that relate to this product/feature.
+1. Read all provided artifacts. Check for existing documents at `.product/prd/` that relate to this product/feature.
 2. Extract and organize:
    - **Problem signals** — pain points, user complaints, motivations mentioned across artifacts
    - **Feature/capability inventory** — what's described or implied
@@ -121,8 +121,8 @@ Proceed to Step 3.
 Read the appropriate template and [references/writing-guide.md](references/writing-guide.md).
 
 1. Create the PRD at the appropriate path:
-   - Product-level: `docs/product/prd/prd.md`
-   - Feature-level: `docs/product/prd/<feature-name>/v<N>.md` (use `v1.md` for new PRDs; increment version when revising an existing PRD)
+   - Product-level: `.product/prd/prd.md`
+   - Feature-level: `.product/prd/<feature-name>/v<N>.md` (use `v1.md` for new PRDs; increment version when revising an existing PRD)
 2. Fill each section following the writing guide. The two sections most commonly written poorly are problem statement and non-goals — calibrate quality using these examples:
 
    **Problem statement** — start with the customer pain, not the solution:

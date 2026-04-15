@@ -65,7 +65,7 @@ Highlights:
 Breaking Changes:
 - <breaking change with migration pointer>
 
-See CHANGELOG.md or docs/product/release-notes/v<version>.md for full details.
+See CHANGELOG.md or docs/release-notes/v<version>.md for full details.
 ```
 
 Omit Breaking Changes if none. Omit the footer reference if the files don't exist.

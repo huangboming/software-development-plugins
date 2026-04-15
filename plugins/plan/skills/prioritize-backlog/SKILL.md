@@ -5,7 +5,7 @@ description: "Score and rank backlog items to decide what to build next. Trigger
 
 # Prioritize Backlog
 
-Score and rank backlog items using a structured framework to decide what to build next. Produces a prioritization document at `docs/product/backlog/prioritization/<name>.md`.
+Score and rank backlog items using a structured framework to decide what to build next. Produces a prioritization document at `.product/backlog/prioritization/<name>.md`.
 
 ## References
 
@@ -25,7 +25,7 @@ Score and rank backlog items using a structured framework to decide what to buil
 
 #### Load Items
 
-1. Read `docs/product/backlog/backlog.md`. Filter to items with status `Ready`.
+1. Read `.product/backlog/backlog.md`. Filter to items with status `Ready`.
 2. If the user wants to include `New` items, warn: "New items may lack context for accurate scoring — consider clarifying them first."
 3. If no backlog doc exists, ask: "Want me to create a backlog first, or do you have a list to score directly?"
 
@@ -109,7 +109,7 @@ If the user disagrees, explore which specific scores feel off rather than re-ran
 
 Read [prioritization-template.md](references/prioritization-template.md) and [scoring-guide.md](references/scoring-guide.md).
 
-1. Create `docs/product/backlog/prioritization/<name>.md` using the template. Name after the scope (e.g., `q2-features.md`, `sprint-14.md`).
+1. Create `.product/backlog/prioritization/<name>.md` using the template. Name after the scope (e.g., `q2-features.md`, `sprint-14.md`).
 2. Fill the scoring table with all items, ranked by composite score (descending).
 3. Write a one-sentence rationale for each item.
 4. Document excluded items with rationale and revisit trigger.
@@ -129,7 +129,7 @@ Before presenting, check:
 
 ### Step 5: Update Backlog and Present
 
-1. Update `docs/product/backlog/backlog.md` to reflect results:
+1. Update `.product/backlog/backlog.md` to reflect results:
    - Committed items → status `In Progress`
    - Deferred items → keep status, note in description when to revisit
    - Dropped items → status `Dropped` with rationale
@@ -150,7 +150,7 @@ If the user cannot estimate Reach or Effort:
   → For Reach: check analytics, support ticket volume, or feature request counts. If no data, use Confidence=50% to penalize uncertainty. For Effort: propose t-shirt sizes (S/M/L/XL) mapped to the framework's scale. Flag as an assumption.
 
 If the user wants to re-prioritize an existing document:
-  → Read the existing prioritization at `docs/product/backlog/prioritization/`. Ask: "What changed?" — new data, competitive move, shifted objectives, revised effort estimates. Rescore only the affected items; carry forward unchanged scores.
+  → Read the existing prioritization at `.product/backlog/prioritization/`. Ask: "What changed?" — new data, competitive move, shifted objectives, revised effort estimates. Rescore only the affected items; carry forward unchanged scores.
 
 If no backlog doc exists and the user asks to prioritize:
   → Offer to create the backlog first from their list, or proceed with a one-off prioritization without a persistent backlog doc.

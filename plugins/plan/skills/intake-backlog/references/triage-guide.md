@@ -28,10 +28,10 @@ Ask only what is missing. If the user's input already covers an area, skip it.
 
 | Location | What to look for |
 |----------|-----------------|
-| `docs/product/backlog/backlog.md` | Active items with similar scope or overlapping user need |
-| `docs/product/prd/` | Existing PRDs that address the same problem space or feature area |
-| `docs/product/research/` | Discovery documents covering the same user segment or problem |
-| `docs/product/intakes/` | Prior intake records for the same or similar requirement |
+| `.product/backlog/backlog.md` | Active items with similar scope or overlapping user need |
+| `.product/prd/` | Existing PRDs that address the same problem space or feature area |
+| `.product/research/` | Discovery documents covering the same user segment or problem |
+| `.product/intakes/` | Prior intake records for the same or similar requirement |
 
 ### How to check
 

@@ -173,7 +173,7 @@ The strong version names a specific customer (new engineer), a specific moment (
 The strong version is opinionated about *which* engineer (second/third year, fast-growing company), names the specific pain (drowning in context, piecing together decisions), and ends with a concrete outcome (closes laptop at 6pm because work was uniquely hers).
 
 **Tactics:**
-- Pull from `docs/product/research/*.md` if it exists — use personas, JTBD, and pain points as raw material
+- Pull from `.product/research/*.md` if it exists — use personas, JTBD, and pain points as raw material
 - Limit to 1–3 personas; more dilutes focus
 - Use specific role titles, not generic labels ("second-year backend engineer at a Series B," not "developer")
 - End each sketch with a concrete before/after moment

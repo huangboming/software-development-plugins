@@ -42,7 +42,7 @@ Explicitly out of scope for this initiative:
 | <Feature 1> | <one-line description> | Must-have / Should-have / Nice-to-have |
 | <Feature 2> | <one-line description> | Must-have / Should-have / Nice-to-have |
 
-For each Must-have and Should-have feature, create a feature-level PRD at `docs/product/prd/<feature-name>/v1.md`.
+For each Must-have and Should-have feature, create a feature-level PRD at `.product/prd/<feature-name>/v1.md`.
 
 ## Success Metrics
 

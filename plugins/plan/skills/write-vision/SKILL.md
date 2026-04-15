@@ -16,7 +16,7 @@ description: "Create or update a product vision document with ranked product pri
 Writing a product vision involves these steps:
 
 1. Confirm scope and ownership
-2. Select input workflow (conversational, research-synthesis, or catalog-synthesis)
+2. Select input workflow (conversational or research-synthesis)
 3. Gather context
 4. Select scaffold (default or alternative)
 5. Draft vision.md
@@ -41,11 +41,10 @@ Determine which workflow applies based on available inputs:
 | User situation | Workflow |
 |---|---|
 | User describes an idea, concept, or rough aspiration with no existing artifacts | **Conversational Elicitation** (Step 3a) |
-| `docs/product/research/*.md` exists from a prior `research-users` run | **Synthesis from Research** (Step 3b) |
-| `docs/product/catalog/*.md` exists (mature product with shipped features) | **Synthesis from Catalog** (Step 3c) |
-| Multiple of the above exist | Combine. Start with Step 3b or 3c, fill gaps with Step 3a questions. |
+| `.product/research/*.md` exists from a prior `research-users` run | **Synthesis from Research** (Step 3b) |
+| Both of the above | Start with Step 3b, fill gaps with Step 3a questions. |
 
-If the user has nothing — no research, no catalog, no developed idea — proceed with Conversational Elicitation but add a prominent warning banner to the draft (see Step 5).
+If the user has nothing — no research, no developed idea — proceed with Conversational Elicitation but add a prominent warning banner to the draft (see Step 5).
 
 ### Step 3a: Conversational Elicitation
 
@@ -72,7 +71,7 @@ Ask further rounds only if the problem, customer, insight, or rejection areas re
 
 ### Step 3b: Synthesis from Research
 
-1. Read every file in `docs/product/research/`. Extract:
+1. Read every file in `.product/research/`. Extract:
    - Personas → raw material for Section 2 (Who We're Building For)
    - Jobs to be Done → raw material for Section 1 (The Future We're Creating)
    - Competitive gaps and unmet needs → raw material for Section 3 (The Insight)
@@ -80,17 +79,6 @@ Ask further rounds only if the problem, customer, insight, or rejection areas re
 2. Present a 1-paragraph summary of what was extracted and ask the user to confirm or correct before drafting.
 3. Ask 2–4 targeted questions for the sections the research cannot answer — typically the insight (Section 3), rejection (Section 4), timeframe, and principles (Section 6).
 4. Proceed to Step 4.
-
-### Step 3c: Synthesis from Catalog
-
-1. Read every file in `docs/product/catalog/`. Note that catalog is backward-looking (what has shipped) and vision is forward-looking — the goal here is to reverse-engineer the implicit vision the product is already expressing, then ask the user to either ratify or correct it.
-2. Extract:
-   - Dominant customer type across all capabilities → Section 2
-   - Recurring themes in "why it exists" sections → raw material for Section 3 (insight)
-   - Absent capabilities — what the product has consistently not built despite obvious demand → Section 4 (rejection)
-3. Present the inferred vision as a summary: "Based on what you've shipped, the product seems to believe X, serve Y, and explicitly reject Z. Does this match where you want the next 3 years to go?" Ask the user to confirm, correct, or redirect.
-4. Ask 2–4 targeted questions for anything the catalog cannot answer.
-5. Proceed to Step 4.
 
 ### Step 4: Select Scaffold
 
@@ -108,7 +96,7 @@ If the user has no preference, use the default. Do not push alternatives unneces
 1. Read [references/cagan-canon-and-writing.md](references/cagan-canon-and-writing.md). This file contains the section-by-section writing guide, the weak/strong examples for each section, and the failure-mode checklist.
 2. Read [references/principles-guide.md](references/principles-guide.md) before drafting Section 6 (Product Principles).
 3. If using an alternative scaffold, read [references/alternative-scaffolds.md](references/alternative-scaffolds.md) and use the selected structure.
-4. Create the output file at `docs/product/vision.md`. Create the `docs/product/` directory if it does not exist.
+4. Create the output file at `.product/vision.md`. Create the `.product/` directory if it does not exist.
 5. Write the front matter:
    ```markdown
    > **Owner:** [name or "TBD"]
@@ -118,12 +106,12 @@ If the user has no preference, use the default. Do not push alternatives unneces
    > **Timeframe:** [3 years / 5 years / 10 years]
    > **Distribution:** [one-line note on how this will be evangelized]
    ```
-6. **If the user provided no research, no catalog, and only minimal conversational input:** Add a prominent warning banner immediately after the front matter:
+6. **If the user provided no research and only minimal conversational input:** Add a prominent warning banner immediately after the front matter:
    ```markdown
    > **⚠️ Drafted without grounding.** This vision was written from conversational
-   > input alone — no user research, no shipped-feature catalog. Validate against
-   > real customer evidence before sharing beyond the authoring session. Consider
-   > running `research-users` first and revising.
+   > input alone — no user research. Validate against real customer evidence
+   > before sharing beyond the authoring session. Consider running
+   > `research-users` first and revising.
    ```
 7. Draft each section per the writing guide in `cagan-canon-and-writing.md`. Use the weak/strong examples as calibration.
 8. Draft Section 6 (Product Principles) per `principles-guide.md`. Elicit principles using the conflict-shaped questions if the user has not already provided them.
@@ -151,10 +139,10 @@ If the draft fails any item, revise and re-check. Iterate internally until the d
 
 1. Summarize what was written:
    - Which scaffold was used
-   - Which sections drew from research/catalog vs. user input
+   - Which sections drew from research vs. user input
    - Any sections where the draft required assumptions (flag these)
 2. Note any unresolved items — e.g., owner TBD, missing principles, placeholder review date
-3. Link to `docs/product/vision.md`
+3. Link to `.product/vision.md`
 4. Ask: "What feels wrong? What's missing?" — not "does this look good?" (the latter produces hollow approvals)
 
 ## Edge Cases
@@ -162,20 +150,20 @@ If the draft fails any item, revise and re-check. Iterate internally until the d
 If the user asks for a **team-level or feature-level vision**:
   → Stop. Explain that product vision is a leadership artifact owned by a product leader and covers the full product. Suggest `write-prd` for feature-level direction.
 
-If the user asks to **update an existing vision** at `docs/product/vision.md`:
+If the user asks to **update an existing vision** at `.product/vision.md`:
   → Read the existing file. Ask what is changing and why. Preserve sections that are not changing. Update `Last updated` to today and push `Next review` forward if significant revisions were made. Do not fork versions — vision is a living document.
 
-If the user wants to **write vision without research, catalog, or a developed idea**:
+If the user wants to **write vision without research or a developed idea**:
   → Proceed with Conversational Elicitation. Add the grounding warning banner per Step 5 item 6. Warn verbally as well: "This vision will be aspirational without evidence. Consider running `research-users` first for a stronger foundation."
 
 If the user supplies **a mission statement and calls it a vision**:
   → Explain the distinction using the Vision vs. Mission table in `cagan-canon-and-writing.md` Section 3. Ask whether to (a) convert it to a proper vision (requires real drafting), (b) keep it as a mission and write a vision separately, or (c) abort.
 
-If `docs/product/research/*.md` exists but is **older than 12 months**:
+If `.product/research/*.md` exists but is **older than 12 months**:
   → Flag that the research may be stale. Ask whether to refresh research first (run `research-users`) or proceed with stale data. Note the staleness in the vision front matter if proceeding.
 
 If the user wants the vision **at a non-default path**:
-  → Accept but warn: future skills (`write-prd`, `prioritize-backlog`, etc.) will expect the default path `docs/product/vision.md`. If the user insists, document the custom path in a CLAUDE.md or project-level note.
+  → Accept but warn: future skills (`write-prd`, `prioritize-backlog`, etc.) will expect the default path `.product/vision.md`. If the user insists, document the custom path in a CLAUDE.md or project-level note.
 
 If the user cannot produce **any real conflicts** when eliciting principles:
   → This signals either (a) the product is too new to have principles or (b) the user is not close enough to product decisions. Suggest deferring Section 6 with a placeholder ("TBD — will draft after first quarter of shipping") rather than filling it with platitudes.

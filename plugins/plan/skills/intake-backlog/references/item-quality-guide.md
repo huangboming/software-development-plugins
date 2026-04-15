@@ -20,7 +20,7 @@ Source should be specific enough to trace back and assess credibility.
 |------|--------|
 | "Feedback" | "Customer feedback — 12 requests via support in Q1 2026" |
 | "Stakeholder" | "VP Sales request — tied to Enterprise deal pipeline (3 accounts)" |
-| "PRD" | "Extracted from docs/product/prd/reporting/v2.md, user story #3" |
+| "PRD" | "Extracted from .product/prd/reporting/v2.md, user story #3" |
 
 ## Granularity Check
 
@@ -34,12 +34,4 @@ Items should be at the **feature or capability level** — scorable independentl
 
 If too big, split into features before adding. If too small, it belongs in a sprint board, not the product backlog.
 
-## Specificity Check
-
-| Reject | Accept |
-|--------|--------|
-| "Improve performance" | "Reduce dashboard load time from 8s to <2s" |
-| "Search feature" | "Full-text search across documents" |
-| "Fix bugs" | "Fix CSV export truncating rows beyond 10,000" |
-
-If an item is too vague, ask: "Which part of the product? What specific problem does this solve?"
+If an item is too vague to score, ask: "Which part of the product? What specific problem does this solve?" Apply the description standards in the first table above to decide whether it clears the bar.

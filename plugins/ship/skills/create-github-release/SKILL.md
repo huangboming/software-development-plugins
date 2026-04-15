@@ -41,7 +41,7 @@ For pre-releases or maintenance releases on older branches, add `--latest=false`
 
 | Available Artifact | Approach |
 |---|---|
-| `docs/product/release-notes/v<version>.md` | Use as body via `--notes-file` (strip top heading) |
+| `docs/release-notes/v<version>.md` | Use as body via `--notes-file` (strip top heading) |
 | `CHANGELOG.md` entry | Extract version entry as body |
 | Neither exists | Offer: (1) auto-generate with `--generate-notes`, or (2) run `write-release-note` first |
 

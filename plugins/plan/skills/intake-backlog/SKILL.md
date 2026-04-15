@@ -7,21 +7,30 @@ description: "Capture new requirements and add them to the product backlog. Trig
 
 Capture incoming requirements from any source — customer feedback, stakeholder requests, support patterns, market signals — and add them to the product backlog.
 
+## Outcomes
+
+- `.product/intakes/<slug>.md` — one intake record per requirement, preserving source context and assessment.
+- `.product/backlog/backlog.md` — single rolling backlog, updated with new or modified items.
+
 ## References
 
-- [references/intake-template.md](references/intake-template.md) — Template for intake records (`docs/product/intakes/<slug>.md`) and field guidance. Read before writing an intake record.
+- [references/intake-template.md](references/intake-template.md) — Template for intake records (`.product/intakes/<slug>.md`) and field guidance. Read before writing an intake record.
 - [references/triage-guide.md](references/triage-guide.md) — Elicitation questions, duplicate detection, assessment calibration, and batch intake handling. Read at the start of every intake.
-- [references/backlog-template.md](references/backlog-template.md) — Template for the backlog document (`docs/product/backlog/backlog.md`). Read when creating or first updating the backlog.
+- [references/backlog-template.md](references/backlog-template.md) — Template for the backlog document (`.product/backlog/backlog.md`). Read when creating or first updating the backlog.
 - [references/item-quality-guide.md](references/item-quality-guide.md) — Backlog item quality standards: descriptions, sources, granularity checks. Read when adding items to the backlog.
 
 ## Process
 
-1. Capture the requirement (intake)
-2. Add/update backlog items
+Determine entry point from the user's request:
+
+- **"Add X to the backlog" / direct backlog update** → skip to Step 2.
+- **Anything else (new requirement, feedback, request)** → run Step 1, then Step 2.
 
 ### Step 1: Capture the Requirement
 
 Read [triage-guide.md](references/triage-guide.md) for elicitation questions and limits.
+
+#### Gather Information
 
 1. Read what the user has provided.
 2. Identify what is already known (the what, who, and source).
@@ -36,18 +45,14 @@ Follow the duplicate detection process in [triage-guide.md](references/triage-gu
 
 #### Assess the Requirement
 
-Using the triage guide's calibration aids:
-
-- **Category:** Use the decision tree (new-capability / enhancement / pain-point / compliance / technical-enabler)
-- **Rough size:** Use the heuristic signals (small-days / medium-weeks / large-months). Round up when uncertain.
-- **Clarity:** Judge whether this is clear, partial, or vague
+Complete Category, Rough size, and Clarity using the calibration aids in [triage-guide.md](references/triage-guide.md).
 
 #### Write the Intake Record
 
 Read [intake-template.md](references/intake-template.md) for the template and field guidance.
 
-1. Create `docs/product/intakes/` if it does not exist.
-2. Write the intake record at `docs/product/intakes/<slug>.md` where `<slug>` is a short kebab-case name derived from the requirement.
+1. Create `.product/intakes/` if it does not exist.
+2. Write the intake record at `.product/intakes/<slug>.md` where `<slug>` is a short kebab-case name derived from the requirement.
 3. Fill all template sections. Leave Raw Notes empty if there is nothing to capture.
 
 #### Present and Confirm
@@ -56,7 +61,7 @@ Present the intake record with a brief summary. Ask the user to confirm or corre
 
 **Example:**
 
-"Captured intake: **CSV export for reports** (`docs/product/intakes/csv-export.md`)
+"Captured intake: **CSV export for reports** (`.product/intakes/csv-export.md`)
 
 - **Requirement:** Users need to export report data as CSV — currently copy-pasting manually
 - **Overlaps:** Related to 'Data export' in backlog (broader scope, this is a specific increment)
@@ -73,13 +78,11 @@ For batch intakes, present a summary table after all items are processed:
 
 ### Step 2: Add or Update Backlog Items
 
-After the user confirms the intake, proceed directly to add the item to the backlog.
-
-If the user's original request was to add directly to the backlog (e.g., "add X to the backlog"), skip the intake record and go directly to this step.
+After the user confirms the intake (or when entering directly from a backlog-update request), add or modify items in the backlog.
 
 #### Locate or Create the Backlog
 
-1. Check if `docs/product/backlog/backlog.md` exists.
+1. Check if `.product/backlog/backlog.md` exists.
 2. If it exists, read it. If not, read [backlog-template.md](references/backlog-template.md) and create it.
 
 #### Determine Action
@@ -108,7 +111,7 @@ For each new item, capture:
 
 When extracting items from a PRD or requirement doc:
 1. Pull each distinct feature or user story as a separate backlog item.
-2. Use the document path as the Source (e.g., "Extracted from docs/product/prd/reporting/v2.md, user story #3").
+2. Use the document path as the Source (e.g., "Extracted from .product/prd/reporting/v2.md, user story #3").
 3. Exclude implementation details, technical architecture, and test cases.
 
 Present added items in a table and confirm before writing.
@@ -144,10 +147,18 @@ If the user says "just capture it, don't ask questions":
   → Write the intake with what is available. Set clarity to `partial` or `vague`. Note gaps in Raw Notes.
 
 If an existing intake record with the same slug already exists:
-  → Append a date suffix: `<slug>-YYYY-MM-DD.md`.
+  → Append today's date: `<slug>-YYYY-MM-DD.md`. If that path is also taken, append a numeric tiebreak: `<slug>-YYYY-MM-DD-2.md`, `-3.md`, etc.
 
 If an item duplicates an existing backlog entry:
   → Surface the existing item. Ask whether to merge (combine descriptions and sources) or keep separate (clarify the distinction).
 
 If the backlog mixes granularity levels (epics alongside stories):
   → Normalize before adding. Either break epics into stories, or note the inconsistency and ask the user how to proceed.
+
+## Gotchas
+
+- **Surface-wording dedup misses semantic duplicates** — "faster search" and "search results take too long" are the same need. Compare by underlying problem per [triage-guide.md](references/triage-guide.md), not by keyword overlap.
+- **Backlog path is hard-coded** — duplicate detection reads `.product/backlog/backlog.md`. If the project has split, renamed, or relocated the backlog, detection silently passes. Confirm the path exists before trusting "no matches."
+- **Solutions masquerading as requirements** — users often phrase requests as solutions ("add a dropdown for X"). Capture the underlying need in Requirement, not the solution. The proposed solution goes in Raw Notes.
+- **Batch intakes drift in quality** — when processing 5+ requirements at once, it is tempting to short-cut duplicate checks on later items. Run the full check on each; duplicates within the same batch are common.
+- **Stale "Last updated" on the backlog** — every backlog mutation (add, update, status change) must bump the `Last updated` date. Forgotten dates make triage passes untrustworthy.

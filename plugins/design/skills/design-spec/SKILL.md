@@ -143,7 +143,7 @@ If the user asks for an option not presented:
 
 ## Step 7: Write Spec
 
-After the user selects a plan, generate `docs/development/specs/<feature-name>.md` following the template in [references/spec-template.md](references/spec-template.md). Derive `<feature-name>` from the spec topic, slugified to kebab-case (e.g., "User Authentication" becomes `user-authentication`). Create the `docs/development/specs/` directory if it does not exist.
+After the user selects a plan, generate `.product/development/specs/<feature-name>.md` following the template in [references/spec-template.md](references/spec-template.md). Derive `<feature-name>` from the spec topic, slugified to kebab-case (e.g., "User Authentication" becomes `user-authentication`). Create the `.product/development/specs/` directory if it does not exist.
 
 Honor the "design-first, code-light" hard constraint above. Pick the mermaid flavor that matches what you are visualizing:
 
@@ -166,7 +166,7 @@ Before delivering, offer the user a parallel multi-axis review using the `spec-r
 Prompt the user exactly once, in this shape:
 
 ```
-The spec is drafted at docs/development/specs/<feature-name>.md.
+The spec is drafted at .product/development/specs/<feature-name>.md.
 
 Run a parallel review with spec-reviewer agents? Each focuses on a different axis:
 
