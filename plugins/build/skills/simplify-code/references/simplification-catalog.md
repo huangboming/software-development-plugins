@@ -10,7 +10,6 @@ Apply changes in this order within each file:
 |-------|----------|-----------|
 | 1 | Dispensables | Removing dead code reduces noise and may eliminate false positives in subsequent categories |
 | 2 | Complexity reduction | Refactoring is easier and less error-prone in clean code |
-| 3 | Guideline enforcement | Convention alignment is cosmetic — apply last to avoid conflicts with structural changes |
 
 Within each category, process changes bottom-up (last line first) to preserve line numbers for subsequent edits.
 

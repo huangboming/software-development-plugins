@@ -1,6 +1,6 @@
 ---
 name: simplify-code
-description: "Simplify code with project-aware checks — reads project guidelines, uses a comprehensive pattern catalog, and targets user-specified scope. Triggers: 'simplify this code', 'clean up this module', 'reduce complexity', 'remove dead code', 'enforce our code guidelines', 'deep simplify', 'simplify against guidelines', 'clean up this file'."
+description: "Simplify code using a comprehensive pattern catalog, targeting user-specified scope. Triggers: 'simplify this code', 'clean up this module', 'reduce complexity', 'remove dead code', 'deep simplify', 'clean up this file'."
 ---
 
 # Simplify Code
@@ -12,7 +12,7 @@ Parse from the user's request:
 | Argument | Required | Default | Description |
 |----------|----------|---------|-------------|
 | scope | no | changed files | Files, directories, or modules to simplify |
-| focus | no | all | Category filter: `dispensables`, `complexity`, `guidelines`, or `all` |
+| focus | no | all | Category filter: `dispensables`, `complexity`, or `all` |
 
 **Parsing examples:**
 
@@ -20,12 +20,10 @@ Parse from the user's request:
 - "clean up src/api/" → scope: src/api/, focus: all
 - "remove dead code in the billing module" → scope: billing module, focus: dispensables
 - "reduce complexity in this file" → scope: current file, focus: complexity
-- "enforce our code guidelines on changed files" → scope: changed files, focus: guidelines
 
 ## References
 
 - [references/simplification-catalog.md](references/simplification-catalog.md) — Pattern categories, confidence rules, and transform ordering. Read before analyzing code.
-- [references/guideline-integration.md](references/guideline-integration.md) — How to read and apply project code guidelines from `docs/development/code-guidelines/`. Read only when project guidelines exist and focus includes guidelines.
 
 ## Process
 
@@ -53,11 +51,8 @@ If scope resolves to >20 files, ask: "That's N files. Focus on the most complex 
 
 Load in parallel:
 
-1. **Project guidelines** — check if `docs/development/code-guidelines/` exists. If found, read all `.md` files and load [references/guideline-integration.md](references/guideline-integration.md).
-2. **Simplification catalog** — read [references/simplification-catalog.md](references/simplification-catalog.md).
-3. **Target code** — read all files in scope.
-
-If no guidelines exist and focus is `guidelines`, inform the user and run with generic patterns instead.
+1. **Simplification catalog** — read [references/simplification-catalog.md](references/simplification-catalog.md).
+2. **Target code** — read all files in scope.
 
 ### Step 3: Analyze and Classify
 
@@ -87,7 +82,7 @@ Ask: "Apply all clear changes? I'll show judgment calls individually."
 
 ### Step 5: Apply Fixes
 
-Follow the catalog's transform ordering (dispensables → complexity → guidelines). Within each category, process bottom-up (last line first) to preserve line numbers.
+Follow the catalog's transform ordering (dispensables → complexity). Within each category, process bottom-up (last line first) to preserve line numbers.
 
 - **Clear** changes: apply directly
 - **Judgment** changes: show before/after, explain trade-off, wait for approval
@@ -112,4 +107,3 @@ If a pattern appears consistently across the codebase:
 
 - **No simplification opportunities** — report the file as clean.
 - **Large function extraction is ambiguous** — present 2 options with trade-offs.
-- **Guidelines contradict catalog** — project guidelines take precedence.
