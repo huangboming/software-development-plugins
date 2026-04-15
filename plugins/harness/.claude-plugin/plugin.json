@@ -1,0 +1,8 @@
+{
+    "name": "harness",
+    "version": "0.1.0",
+    "description": "Prepare the project itself to host AI agents well — tune the runtime environment, guardrails, and workflows so every other phase of the loop performs more reliably inside this repo.",
+    "author": {
+        "name": "Boming Huang"
+    }
+}

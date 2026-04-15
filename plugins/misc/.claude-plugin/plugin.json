@@ -1,0 +1,8 @@
+{
+    "name": "misc",
+    "version": "0.1.0",
+    "description": "Miscellaneous utilities that don't fit into a specific phase of the software development lifecycle.",
+    "author": {
+        "name": "Boming Huang"
+    }
+}

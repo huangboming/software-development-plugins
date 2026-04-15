@@ -1,0 +1,45 @@
+{
+    "name": "software-development-plugins",
+    "description": "Plugins that guide agents through the full software product lifecycle — plan, design, build, verify, ship, and measure",
+    "owner": {
+        "name": "Boming Huang"
+    },
+    "plugins": [
+        {
+            "name": "plan",
+            "source": "./plugins/plan"
+        },
+        {
+            "name": "design",
+            "source": "./plugins/design"
+        },
+        {
+            "name": "build",
+            "source": "./plugins/build"
+        },
+        {
+            "name": "verify",
+            "source": "./plugins/verify"
+        },
+        {
+            "name": "ship",
+            "source": "./plugins/ship"
+        },
+        {
+            "name": "measure",
+            "source": "./plugins/measure"
+        },
+        {
+            "name": "docs",
+            "source": "./plugins/docs"
+        },
+        {
+            "name": "harness",
+            "source": "./plugins/harness"
+        },
+        {
+            "name": "misc",
+            "source": "./plugins/misc"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "name": "plan",
+    "version": "0.1.0",
+    "description": "Decide what to build next and why — convert user needs, stakeholder input, and prior learning into prioritized product direction that every later phase can execute against.",
+    "author": {
+        "name": "Boming Huang"
+    }
+}
