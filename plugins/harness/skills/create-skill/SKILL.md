@@ -16,10 +16,18 @@ For the full anatomy and loading model, see `references/skill-anatomy.md` and `r
 
 ## Always Read
 
-Before any skill-creation or iteration task, read both files in `rules/`:
+Before any skill-creation or iteration task, read all six files below:
 
 1. `rules/core-principles.md` — concise, push-off-defaults, degrees-of-freedom, avoid-railroading
 2. `rules/authoring.md` — frontmatter, imperative form, exclusions, no-duplication, reference-every-file
+3. `rules/context-engineering.md` — context allocation strategies, signal-to-noise tests, anti-patterns
+4. `references/skill-anatomy.md` — folder structure, file types, and when to split into `rules/` + `workflows/` + `references/`
+5. `references/progressive-disclosure.md` — three-level loading system; governs what goes in SKILL.md vs. references
+6. `references/writing-effective-instructions.md` — imperative form, examples, edge cases, anti-patterns for SKILL.md body
+
+## Hard Constraints
+
+- **Confirm before delegating.** Before launching `skill-reviewer` agents (Step 5 of `workflows/create-new-skill.md`), present the axis options to the user and wait for their selection. Do not auto-launch reviews without confirmation.
 
 ## Common Tasks
 
@@ -28,23 +36,26 @@ Before any skill-creation or iteration task, read both files in `rules/`:
 | Create a new skill from scratch | `workflows/create-new-skill.md` |
 | Iterate on an existing skill after real use | `workflows/iterate-on-skill.md` |
 | Classify new content (rule vs. workflow vs. reference) | `workflows/iterate-on-skill.md` (Step 3) |
-| Package a finished skill for distribution | `workflows/create-new-skill.md` → Step 5 |
+| Review a skill for quality issues | `workflows/create-new-skill.md` → Step 5 |
+| Package a finished skill for distribution | `workflows/create-new-skill.md` → Step 7 |
 | **Other / unlisted task** | Default to `workflows/create-new-skill.md`, jumping to the relevant step |
 
 Workflows link to the per-topic references below as needed.
 
 ## Reference Index
 
-Consult these based on the sub-problem at hand:
+Files marked **(always read)** are loaded above. The rest load on demand from workflows:
 
-- `references/skill-anatomy.md` — Folder structure, file types, and when to split `references/` into `rules/` + `workflows/` + `references/`.
-- `references/progressive-disclosure.md` — Three-level loading system and general guidelines.
-- `references/progressive-disclosure-patterns.md` — Three worked patterns for slicing a large skill across files.
-- `references/context-engineering.md` — Strategies for allocating content across SKILL.md, references, scripts, assets.
-- `references/writing-effective-instructions.md` — Prompt engineering playbook for SKILL.md body (imperative form, examples, edge cases, anti-patterns).
-- `references/workflow-patterns.md` — Sequential, conditional, decision-loop, and self-correction patterns for multi-step processes.
-- `references/output-patterns.md` — Template, example, structured-data, and argument patterns.
-- `references/common-patterns.md` — Gotchas section, first-run configuration, persistent data across sessions.
+- `rules/core-principles.md` — **(always read)** Concise, push-off-defaults, degrees-of-freedom, avoid-railroading.
+- `rules/authoring.md` — **(always read)** Frontmatter, imperative form, exclusions, no-duplication, reference-every-file.
+- `rules/context-engineering.md` — **(always read)** Context allocation strategies, signal-to-noise tests, anti-patterns.
+- `references/skill-anatomy.md` — **(always read)** Folder structure, file types, and when to split `references/` into `rules/` + `workflows/` + `references/`.
+- `references/progressive-disclosure.md` — **(always read)** Three-level loading system and general guidelines.
+- `references/writing-effective-instructions.md` — **(always read)** Prompt engineering playbook for SKILL.md body (imperative form, examples, edge cases, anti-patterns).
+- `references/output-patterns.md` — Read when the skill produces structured output (templates, schemas, examples).
+- `references/progressive-disclosure-patterns.md` — Read when slicing a large skill across multiple files.
+- `references/workflow-patterns.md` — Read when the skill has multi-step procedures (sequential, conditional, loops).
+- `references/common-patterns.md` — Read when adding gotchas, first-run configuration, or persistent data across sessions.
 
 ## Scripts
 
@@ -55,5 +66,5 @@ Consult these based on the sub-problem at hand:
 ## Gotchas
 
 - **Unreferenced files are invisible** — A file in `references/`, `rules/`, or `workflows/` that isn't named in SKILL.md (or in a workflow that loads it) will never be read. Add an index entry with *what* and *when*.
-- **Splitting too early hurts more than it helps** — For small skills, a flat `references/` is fine. Split into `rules/` + `workflows/` only when a flat directory starts mixing content shapes or Claude loads the wrong file.
+- **Never mix content shapes in one directory** — Imperative constraints go in `rules/`, ordered procedures in `workflows/`, descriptive material in `references/`. Not every skill needs all three, but when a content type is present, it goes in the matching directory.
 - **Returning to the same skill mid-session doesn't re-trigger routing** — On follow-up tasks in the same conversation, Claude may skip re-reading SKILL.md and act on stale context. If a new task arrives, re-enter through SKILL.md and re-route.

@@ -51,9 +51,9 @@ Pick the prefix that matches user intent, not implementation:
 
 Prefix predictability is how users discover skills via trigger phrases — match the house style when adding new skills.
 
-## Splitting references/ into rules/ + workflows/
+## Content shape separation
 
-Flat `references/` is fine for small skills. Split into `rules/` + `workflows/` + `references/` only when the flat directory starts mixing content shapes (invariants vs. procedures vs. templates) or Claude loads the wrong file. Splitting too early adds overhead without benefit.
+Always separate bundled content by shape: imperative constraints in `rules/`, ordered procedures in `workflows/`, descriptive material in `references/`. Not every skill needs all three directories, but when a content type is present, it goes in the matching directory. Never mix content shapes in a single directory.
 
 
 ## Never

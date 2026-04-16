@@ -8,7 +8,7 @@ The context window is a shared, finite resource. Skills compete for attention wi
 
 **The justification test:** For each piece of content, ask: "Would Claude handle this incorrectly without this information?" If the answer is no, cut it. Prefer concise examples over verbose explanations — examples communicate more per token.
 
-See `references/context-engineering.md` for a complete framework on allocating content across SKILL.md, references, scripts, and assets.
+See `rules/context-engineering.md` for a complete framework on allocating content across SKILL.md, references, scripts, and assets.
 
 ## Push Claude Off Its Defaults
 

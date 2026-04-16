@@ -4,10 +4,14 @@ End-to-end procedure for building a new skill from scratch. Steps are sequential
 
 ## Prerequisite Reading
 
-Before starting, confirm the agent has loaded:
+Before starting, confirm the agent has loaded all six "Always Read" files from SKILL.md:
 
 - `rules/core-principles.md` — the four principles every skill must honor
 - `rules/authoring.md` — frontmatter, imperative form, exclusions, no-duplication
+- `rules/context-engineering.md` — context allocation strategies, signal-to-noise tests, anti-patterns
+- `references/skill-anatomy.md` — folder structure and file types
+- `references/progressive-disclosure.md` — three-level loading system
+- `references/writing-effective-instructions.md` — how to write SKILL.md instructions
 
 ## Step 1: Understand the Skill with Concrete Examples
 
@@ -57,20 +61,16 @@ The script creates the skill directory, a SKILL.md template with TODO placeholde
 
 The skill is being created for another Claude instance. Include information that would be beneficial and non-obvious to Claude — procedural knowledge, domain-specific details, reusable assets.
 
-### Consult Design References
+### Load Additional References
 
-Load references based on the sub-problem at hand:
+The prerequisite files (`skill-anatomy.md`, `progressive-disclosure.md`, `writing-effective-instructions.md`, `context-engineering.md`) are already loaded.
 
-| Need | Reference |
-|------|-----------|
-| Folder layout and file types | `references/skill-anatomy.md` |
-| Three-level loading system | `references/progressive-disclosure.md` |
-| Slicing a large skill across files | `references/progressive-disclosure-patterns.md` |
-| Writing clear instructions | `references/writing-effective-instructions.md` |
-| Managing what lands in the context window | `references/context-engineering.md` |
-| Multi-step process patterns (sequential, conditional, loops) | `references/workflow-patterns.md` |
-| Output formats (templates, examples, schemas) | `references/output-patterns.md` |
-| Gotchas / first-run config / persistent data patterns | `references/common-patterns.md` |
+Load any additional references that match the skill being built:
+
+- **Skill produces structured output** (templates, schemas, examples) → read `references/output-patterns.md` before writing output sections.
+- **Skill has multi-step procedures** (sequential, conditional, loops) → read `references/workflow-patterns.md` before designing the workflow.
+- **Skill is large enough to split across files** → read `references/progressive-disclosure-patterns.md` before deciding file layout.
+- **Skill needs gotchas, first-run config, or persistent data** → read `references/common-patterns.md` before writing those sections.
 
 ### Build Order
 
@@ -81,15 +81,47 @@ Load references based on the sub-problem at hand:
 
 ### Classify Content Into the Right Location
 
-For small skills, a flat `references/` plus optional `scripts/` and `assets/` is fine — don't split prematurely. For larger skills, split by content shape (see `references/skill-anatomy.md` for the full taxonomy):
+Always separate bundled content by shape (see `references/skill-anatomy.md` for the full taxonomy). Not every skill needs all three directories, but when a content type is present, it goes in the matching directory:
 
 - Imperative constraints → `rules/`
 - Ordered procedures → `workflows/`
 - Descriptive/explanatory material → `references/`
 
-## Step 5: Package the Skill
+## Step 5: Review (Multi-Axis)
 
-Once development is complete, package into a distributable `.skill` file. Packaging auto-validates first:
+Before packaging, review the skill for quality issues across multiple axes. Present the user with review options:
+
+> Which review axes should I run? (select one or more, or skip)
+>
+> - **A) context-engineering** — content placement, progressive disclosure, signal-to-noise, no orphans
+> - **B) instructional-clarity** — ambiguity, implicit assumptions, over/under-specification, conflicting directives
+> - **C) trigger-quality** — description coverage, trigger phrase diversity, false-positive/negative risk
+> - **D) all three** — run A + B + C in parallel
+> - **E) skip** — fast self-review against signal-to-noise tests only
+
+For each selected axis, launch the `skill-reviewer` agent via the Task tool, passing:
+1. The absolute path to the skill directory
+2. The axis name (`context-engineering`, `instructional-clarity`, or `trigger-quality`)
+
+Launch all selected axes in parallel — one Task call per axis. Wait for all reviewers to complete before proceeding.
+
+**If the user selects "skip":** Perform a fast self-review by checking only the five signal-to-noise tests from `rules/context-engineering.md` (justification, duplication, example, knowledge, front-loading). Report any issues found and proceed directly to packaging.
+
+## Step 6: Reconcile and Fix
+
+After all reviewers return:
+
+1. **Merge findings** — deduplicate findings that appear across multiple axes (same file, same issue)
+2. **Group by severity** — present all findings in a single list: Critical first, then Major, then Minor
+3. **Show per-axis verdicts** — include each axis's verdict line so the user sees the overall picture
+4. **Apply accepted fixes** — for each finding, ask the user whether to fix or skip. Apply accepted fixes to the skill files
+5. **Skip declined fixes** — do not re-raise declined findings
+
+If all axes approve with no findings, report that and proceed directly to packaging.
+
+## Step 7: Package the Skill
+
+Once development and review are complete, package into a distributable `.skill` file. Packaging auto-validates first:
 
 ```bash
 scripts/package_skill.py <path/to/skill-folder>

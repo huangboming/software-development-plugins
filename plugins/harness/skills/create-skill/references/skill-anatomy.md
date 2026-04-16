@@ -14,8 +14,10 @@ skill-name/
 │   │   └── description: (required)
 │   └── Markdown instructions (required)
 └── Bundled Resources (optional)
+    ├── rules/            - Imperative constraints ("you must do X")
+    ├── workflows/        - Ordered step-by-step procedures
+    ├── references/       - Explanatory material loaded on demand
     ├── scripts/          - Executable code (Python/Bash/etc.)
-    ├── references/       - Documentation loaded on demand
     └── assets/           - Files used in output (templates, icons, fonts, etc.)
 ```
 
@@ -37,12 +39,29 @@ Executable code for tasks that require deterministic reliability or are repeated
 - **Benefits**: Token efficient, deterministic, executed without loading into context.
 - **Note**: Scripts may still need to be read by Claude for patching or environment-specific adjustments.
 
+### Rules (`rules/`)
+
+Long-term constraints that must always be followed. Imperative-shaped.
+
+- **Include when** the skill has invariants Claude must honor on every invocation.
+- **Examples**: `rules/coding-standards.md`, `rules/api-conventions.md`.
+- **Shape test**: content reads as "You must do X" or "Never do Y".
+
+### Workflows (`workflows/`)
+
+Ordered step-by-step procedures for specific tasks. Sequence-shaped.
+
+- **Include when** the skill has multi-step processes where order and completeness matter.
+- **Examples**: `workflows/create-new-widget.md`, `workflows/deploy-release.md`.
+- **Shape test**: content reads as "Do step 1, then step 2, then step 3".
+
 ### References (`references/`)
 
-Documentation loaded on demand to inform Claude's thinking.
+Explanatory material, architecture notes, gotcha catalogues. Descriptive-shaped.
 
 - **Include when** detailed content is only needed for specific request types.
 - **Examples**: `references/finance.md` for schemas, `references/api_docs.md` for specs, `references/policies.md` for org rules.
+- **Shape test**: content reads as "Be careful of X" or "X happens because Y".
 - **Benefits**: Keeps SKILL.md lean, loaded only when Claude determines it's needed.
 - **Best practices**:
   - For files >10k words, include grep search patterns in SKILL.md so Claude searches without loading in full.
@@ -56,15 +75,9 @@ Files not intended to be loaded into context, but used within the output Claude 
 - **Examples**: `assets/logo.png`, `assets/slides.pptx`, `assets/frontend-template/`, `assets/font.ttf`.
 - **Benefits**: Separates output resources from documentation. Claude uses these files without loading them into the context window.
 
-## Optional: Split `references/` by Content Type
+## Classifying Content by Shape
 
-For larger skills, a flat `references/` directory becomes a catch-all. When content volume justifies it, split references by the *kind* of content so Claude opens the right file on the first try:
-
-- **`rules/`** — Long-term constraints that must always be followed ("use constructor injection", "API dates are ISO 8601"). Imperative-shaped.
-- **`workflows/`** — Ordered step-by-step procedures for specific tasks ("adding a new Controller", "shipping a release"). Sequence-shaped.
-- **`references/`** — Explanatory material, architecture notes, gotcha catalogues. Descriptive-shaped.
-
-When a piece of content sits on a boundary, classify by shape:
+Always separate bundled content by shape into `rules/`, `workflows/`, and `references/`. When a piece of content sits on a boundary, classify by shape:
 
 | Content looks like | Target directory |
 |--------------------|------------------|
@@ -72,4 +85,4 @@ When a piece of content sits on a boundary, classify by shape:
 | "Do step 1, then step 2, then step 3" (ordered) | `workflows/` |
 | "Be careful of X" / "X happens because Y" (descriptive) | `references/` |
 
-For small skills, `references/` alone is fine — splitting prematurely adds navigation overhead without benefit. Split when the flat directory mixes unrelated content types or Claude starts loading the wrong file.
+Not every skill needs all three directories — a skill with no imperative constraints has no `rules/`, a skill with no procedures has no `workflows/`. But when a content type is present, it goes in the matching directory. Never mix content shapes in a single directory.
