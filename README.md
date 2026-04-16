@@ -26,6 +26,26 @@ This repository is a [Claude Code](https://claude.com/claude-code) **plugin mark
 
 Install the marketplace in Claude Code, then install the plugins you want.
 
+```shell
+# install in user scope
+claude plugin marketplace add huangboming/software-development-plugins
+# install in project scope
+claude plugin marketplace add huangboming/software-development-plugins --scope project
+
+# install plugins
+claude plugin install build@software-development-plugins
+claude plugin install design@software-development-plugins
+claude plugin install docs@software-development-plugins
+claude plugin install harness@software-development-plugins
+claude plugin install measure@software-development-plugins
+claude plugin install misc@software-development-plugins
+claude plugin install plan@software-development-plugins
+claude plugin install ship@software-development-plugins
+claude plugin install verify@software-development-plugins
+```
+
+Or install within a Claude Code session:
+
 ```text
 /plugin marketplace add huangboming/software-development-plugins
 /plugin install plan@software-development-plugins
