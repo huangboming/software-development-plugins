@@ -35,6 +35,8 @@ Rules are markdown files in `.claude/rules/` that provide focused instructions t
    - Inline examples number 1–2 per instruction at most.
    - The file reflects real standards the team already follows, not aspirations.
 
+6. **Slim CLAUDE.md**: Rule files and CLAUDE.md are both auto-loaded every session, so any guidance that now lives in a rule file is pure duplication if it also sits in CLAUDE.md. Sweep the project's CLAUDE.md files (root `CLAUDE.md` and any nested `CLAUDE.md` — not `~/.claude/CLAUDE.md`, which is the user's concern) and delete bullets or sections that the new rules now cover. Leave CLAUDE.md content that is genuinely out of scope for the rules (project overview, how to run the code, environment setup). Do **not** add "see `.claude/rules/*.md`" pointers — Claude Code loads those files automatically, so a pointer is wasted tokens. Show the user the CLAUDE.md diff alongside the rule files before finishing.
+
 ## Rule File Format
 
 **Filename:** lowercase-kebab-case describing the topic (`error-handling.md`, `api-design.md`). Name by topic, not audience (`testing.md`, not `for-developers.md`). No `rule-` or `claude-` prefix — the directory provides context.
@@ -124,6 +126,7 @@ When generating rules, consider these categories. Not every project needs all of
 - **Rules load every session** — a verbose rule file pays its token cost on every invocation. Cut before shipping.
 - **Overwriting silently destroys user edits** — if `.claude/rules/<topic>.md` already exists, read it and confirm with the user before replacing.
 - **Researcher subagent names vary by install** — invoke whichever researcher subagent the Task tool exposes in the current environment; do not hard-code a plugin-prefixed name.
+- **Never reference rule files from CLAUDE.md** — Claude Code auto-loads every file under `.claude/rules/`, so a line like "See `.claude/rules/testing.md` for test conventions" burns tokens on every session and breaks silently when the file is renamed. Delete such pointers if you find them while slimming.
 
 ## References
 
