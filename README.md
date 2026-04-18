@@ -1,16 +1,17 @@
 # software-development-plugins
 
-A Claude Code plugin marketplace that guides agents through the full software product lifecycle — plan, design, build, verify, ship, measure.
+A Claude Code plugin marketplace that guides agents through the full software product lifecycle — discover, define, design, build, verify, ship, measure.
 
 ## About
 
-This repository is a [Claude Code](https://claude.com/claude-code) **plugin marketplace**: a bundle of nine plugins that each cover one phase of the software product loop. Every plugin ships skills (auto-invoked playbooks) and agents (task-scoped subagents) so a Claude Code session can move from "what should we build?" to "what did shipping teach us?" without leaving the tool.
+This repository is a [Claude Code](https://claude.com/claude-code) **plugin marketplace**: a bundle of ten plugins that each cover one phase of the software product loop. Every plugin ships skills (auto-invoked playbooks) and agents (task-scoped subagents) so a Claude Code session can move from "what should we build?" to "what did shipping teach us?" without leaving the tool.
 
 ### The Plugins
 
 | Plugin | Phase | What it covers |
 |--------|-------|----------------|
-| [`plan`](plugins/plan) | Discover & prioritize | Convert user needs, research, and stakeholder input into prioritized product direction (PRDs, backlog intake, user research, prioritization). |
+| [`discover`](plugins/discover) | Discovery | Turn raw signals into framed opportunities (capture-signal, user-research prep, synthesis, problem framing, opportunity mapping, assumption tests, competitor teardowns). |
+| [`define`](plugins/define) | Definition | Turn framed opportunities into committable specs (vision, prioritization, MVP slicing, success metrics, PRDs, user stories). |
 | [`design`](plugins/design) | Technical design | Resolve product intent into a concrete technical approach grounded in the existing codebase (design specs, spec review, code exploration). |
 | [`build`](plugins/build) | Execution | Turn decisions into working software with version-control hygiene (scaffold, commit, simplify, guard tests/boundaries, create PRs, clean up branches). |
 | [`verify`](plugins/verify) | Quality gate | Check what was built against what should have been built (code review, test strategy, doc review). |
@@ -34,12 +35,13 @@ claude plugin marketplace add huangboming/software-development-plugins --scope p
 
 # install plugins
 claude plugin install build@software-development-plugins
+claude plugin install define@software-development-plugins
 claude plugin install design@software-development-plugins
+claude plugin install discover@software-development-plugins
 claude plugin install docs@software-development-plugins
 claude plugin install harness@software-development-plugins
 claude plugin install measure@software-development-plugins
 claude plugin install misc@software-development-plugins
-claude plugin install plan@software-development-plugins
 claude plugin install ship@software-development-plugins
 claude plugin install verify@software-development-plugins
 ```
@@ -48,7 +50,8 @@ Or install within a Claude Code session:
 
 ```text
 /plugin marketplace add huangboming/software-development-plugins
-/plugin install plan@software-development-plugins
+/plugin install discover@software-development-plugins
+/plugin install define@software-development-plugins
 /plugin install build@software-development-plugins
 # …or any subset you need
 ```
@@ -67,9 +70,9 @@ Run this end-to-end when you're greenfield — no code, no backlog, maybe just a
 
 | Step | Phase | Say something like… | Skill |
 |------|-------|---------------------|-------|
-| 1 | Plan | "research the users and jobs for this idea" | `plan:research-users` |
-| 2 | Plan | "write a product vision" | `plan:write-vision` |
-| 3 | Plan | "write a PRD for the first release" | `plan:write-prd` |
+| 1 | Discover | "prepare user research for this idea" → "synthesize the findings" → "frame the problem" | `discover:prepare-user-research`, `discover:synthesize-research`, `discover:frame-problem` |
+| 2 | Discover | "map the opportunity tree" → "test the riskiest assumption" | `discover:map-opportunities`, `discover:test-assumption` |
+| 3 | Define | "write a product vision" → "slice the MVP" → "set success metrics" → "write a PRD for the first release" → "write user stories" | `define:write-vision`, `define:slice-mvp`, `define:set-success-metrics`, `define:write-prd`, `define:write-user-story` |
 | 4 | Build | "scaffold a new \<stack\> project" | `build:scaffold-project` |
 | 5 | Harness | "set up project CLAUDE.md rules" / "add a skill for \<X\>" | `harness:create-rules`, `harness:create-skill` |
 | 6 | Design | "design the technical spec for \<feature\>" | `design:design-spec` |
@@ -86,8 +89,8 @@ Use this loop for each feature, fix, or chore on an already-live codebase.
 
 | Step | Phase | Say something like… | Skill |
 |------|-------|---------------------|-------|
-| 1 | Plan | "intake this new requirement into the backlog" → "prioritize" | `plan:intake-backlog`, `plan:prioritize-backlog` |
-| 2 | Plan | "write a PRD for \<feature\>" | `plan:write-prd` |
+| 1 | Discover | "capture this user signal" (features) / "capture this bug" (defects) → "frame the problem" | `discover:capture-signal`, `build:capture-issue`, `discover:frame-problem` |
+| 2 | Define | "prioritize" → "slice the MVP" → "set success metrics" → "write a PRD for \<feature\>" → "write user stories" | `define:prioritize`, `define:slice-mvp`, `define:set-success-metrics`, `define:write-prd`, `define:write-user-story` |
 | 3 | Design | "design the technical approach for \<feature\>" | `design:design-spec` |
 | 4 | — | **Implement the spec** — write the code yourself (or with Claude Code's editing loop); no dedicated skill. | _(no skill)_ |
 | 5 | Build | During implementation, at each phase: "simplify this code" / "guard the tests" / "check for boundary leaks" | `build:simplify-code`, `build:guard-test`, `build:guard-boundary` |
