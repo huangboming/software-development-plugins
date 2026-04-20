@@ -1,6 +1,6 @@
 ---
 name: design-website
-description: "Design the site-wide structure (sitemap, page inventory, navigation/IA, cross-page user flows) for a web product — site structure only, not page layouts or visual design. Produces a markdown artifact with mermaid diagrams at .product/design/websites/<slug>.md. Hands off page-level layout to a future design-page sibling, visual tokens to harness:write-design-system, and feature tech specs to design:design-spec. Triggers: '/design-website', 'design the website structure', 'design the structure of [website]', 'figure out the structure for [site]', 'design the IA', 'redesign the website structure', 'redesign the IA', 'plan the pages for [product]', 'plan out the pages for [site]', 'lay out the website', 'sitemap for [site]', 'information architecture for [product]', 'map out the pages and navigation for [site]', 'website IA', 'landing site structure', 'structure for our e-commerce site', 'what pages does an online store need', 'what pages should [site] have', 'figure out the pages for [site]', 'how should the pages of [site] connect', 'now I need the website structure', 'I have a PRD, help me design the website'."
+description: "Design the site-wide structure (sitemap, page inventory, navigation/IA, cross-page user flows) for a web product — site structure only, not page layouts or visual design. Produces a markdown artifact with mermaid diagrams at .product/design/websites/<slug>.md. Hands off page-level layout to design:design-page, visual tokens to harness:write-design-system, and feature tech specs to design:design-spec. Triggers: '/design-website', 'design the website structure', 'design the structure of [website]', 'figure out the structure for [site]', 'design the IA', 'redesign the website structure', 'redesign the IA', 'plan the pages for [product]', 'plan out the pages for [site]', 'lay out the website', 'sitemap for [site]', 'information architecture for [product]', 'map out the pages and navigation for [site]', 'website IA', 'landing site structure', 'structure for our e-commerce site', 'what pages does an online store need', 'what pages should [site] have', 'figure out the pages for [site]', 'how should the pages of [site] connect', 'now I need the website structure', 'I have a PRD, help me design the website'."
 ---
 
 # Design Website
@@ -68,7 +68,7 @@ After delivery, route the user to the right next-step skill based on what they w
 
 | User wants to… | Skill |
 |---|---|
-| Design a single page's UI/UX (layout, components, states) | future `design-page` (sibling skill — not yet shipped) |
+| Design a single page's UI/UX (layout, components, states) | `design:design-page` |
 | Define visual design system (tokens, typography, components) | `harness:write-design-system` |
 | Spec a feature's backend/frontend architecture | `design:design-spec` |
 | Scaffold the implementation | `build:scaffold-project` |

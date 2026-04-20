@@ -185,5 +185,5 @@ Reconcile reviewer output:
 - **Existing site being redesigned** — Add a Step 1.5: read the current site's nav and top routes (use `mcp__chrome-devtools__navigate_page` if available, or ask the user to paste them in). Treat the current IA as evidence, not a constraint.
 - **Internal tool with no public surface** — Skip cookie banner, accessibility statement (verify with user — many internal tools still require it), and most marketing edge pages. Use the internal-tool entry in `references/site-type-patterns.md`.
 - **User pushes for visual design (colors, fonts, components)** — Stop and hand off to `harness:write-design-system`. Do not stretch into surface-plane work (rule 9).
-- **User pushes for single-page layout (wireframes, component composition)** — Acknowledge the gap; the future `design-page` sibling skill is the right home. Note it in Open Questions.
+- **User pushes for single-page layout (wireframes, component composition)** — Hand off to `design:design-page` (sibling skill). Note the dependency in Open Questions if the page design is not yet drafted.
 - **Site has >25 pages** — Split the sitemap into multiple diagrams (one per top-level section) and cross-link them. The page inventory stays in a single table.

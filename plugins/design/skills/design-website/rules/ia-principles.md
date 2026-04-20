@@ -61,7 +61,7 @@ Secondary metrics are fine as guardrails, but the primary one drives nav placeme
 This skill produces *structure-plane* artifacts (Garrett's planes 1-3): user/business strategy, content scope, IA. It does NOT design:
 
 - Visual design — tokens, color, typography, spacing (handed off to `harness:write-design-system`)
-- Single-page layouts and component composition (handed off to a future `design-page` sibling skill)
+- Single-page layouts and component composition (handed off to `design:design-page`)
 - Feature-level technical architecture (handed off to `design:design-spec`)
 - Copywriting or content (out of marketplace scope)
 

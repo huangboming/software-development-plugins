@@ -157,7 +157,7 @@ Numbered list of unresolved decisions, with the cost of leaving them open and th
 
 | Next step | Skill / artifact |
 |---|---|
-| Page-level UI/UX design | future `design:design-page` (sibling skill, not yet shipped) |
+| Page-level UI/UX design | `design:design-page` |
 | Feature tech specs | `design:design-spec` per feature |
 | Design system (tokens, type, components) | `harness:write-design-system` |
 | Implementation scaffolding | `build:scaffold-project` |
