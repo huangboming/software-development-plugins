@@ -1,6 +1,6 @@
 {
     "name": "design",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Decide how to build it — resolve product intent into a concrete technical approach grounded in the realities of the existing codebase, before any code is written.",
     "author": {
         "name": "Boming Huang"
