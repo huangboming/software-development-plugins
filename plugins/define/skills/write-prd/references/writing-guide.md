@@ -116,34 +116,9 @@ Good risk analysis surfaces what could derail the initiative. Focus on risks spe
 **Strong:**
 > Risk: Payment provider API has a 3-week integration timeline that could delay launch. Mitigation: Begin integration in week 1; have fallback provider identified.
 
-## Feature Prioritization
-
-When listing features in a product-level PRD, use three tiers:
-
-| Priority | Meaning | Decision Rule |
-|----------|---------|---------------|
-| Must-have | Launch is blocked without this | Users cannot accomplish the core task without it |
-| Should-have | Significantly improves the experience | Users can work around it, but it's painful |
-| Nice-to-have | Polishes the experience | Adds delight but doesn't affect core value |
-
 ## Quality Checklist
 
-### Product-Level PRD
-
-- [ ] Problem statement names a specific persona and a specific pain
-- [ ] Product vision is one sentence, customer-centric
-- [ ] Goals describe outcomes, not outputs (no "build X" or "implement Y")
-- [ ] Non-goals would surprise someone who didn't write this PRD
-- [ ] At least one persona is defined with role, context, pain point, and success criteria
-- [ ] Features are prioritized (must-have / should-have / nice-to-have)
-- [ ] Success metrics are SMART — each has definition, baseline, target, timeframe
-- [ ] Risks are specific to this initiative, not generic project risks
-- [ ] No implementation details — no technologies, architecture, or system internals
-- [ ] Open questions capture genuine unknowns, not rhetorical questions
-
-### Feature-Level PRD
-
-- [ ] Problem statement ties back to the parent PRD's problem (if applicable)
+- [ ] Problem statement ties back to the parent product definition or vision (if applicable)
 - [ ] Goals are specific to this feature, not the whole product
 - [ ] Non-goals prevent feature scope creep
 - [ ] User stories use specific roles, capabilities, and real benefits
