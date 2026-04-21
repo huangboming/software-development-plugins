@@ -1,6 +1,6 @@
 ---
-name: write-vision
-description: "Create or update a product vision document with ranked product principles. Triggers: 'write a product vision', 'create product vision', 'define our vision', 'draft a vision', 'product vision document', 'where is our product going', 'product principles', 'what do we stand for', '/write-vision'."
+name: define-vision
+description: "Create or update a product vision document with ranked product principles. The aspirational 3–10yr companion to define-product (present-tense product definition) and feature PRDs. Triggers: '/define-vision', 'write a product vision', 'create product vision', 'define our vision', 'draft a vision', 'product vision document', 'where is our product going', 'product principles', 'what do we stand for'. NOT for describing the product today — use define-product for that."
 ---
 
 # Product Vision Writer
@@ -28,7 +28,8 @@ Writing a product vision involves these steps:
 Before gathering any content, verify two things:
 
 1. **Product-level, not team-level.** Product vision is a leadership artifact covering the full product, not a single feature area. If the user asks for "a vision for my team" or "a vision for this feature," stop and explain — this skill produces a product-wide vision owned by a product leader (CPO, VP Product, founder). Suggest alternatives:
-   - For feature-scoped direction: use `write-prd` at the product level
+   - For present-tense product definition: use `define-product`
+   - For feature-scoped direction: use `write-prd`
    - For team-level goals: defer to a future OKR skill (not yet built)
 2. **Ownership.** Ask: "Who owns this vision — CPO, VP Product, founder, or is it still TBD?" Record the name (or "TBD") in the front matter. If the user is not the owner, confirm the owner has delegated authorship.
 
@@ -96,7 +97,7 @@ If the user has no preference, use the default. Do not push alternatives unneces
 1. Read [references/cagan-canon-and-writing.md](references/cagan-canon-and-writing.md). This file contains the section-by-section writing guide, the weak/strong examples for each section, and the failure-mode checklist.
 2. Read [references/principles-guide.md](references/principles-guide.md) before drafting Section 6 (Product Principles).
 3. If using an alternative scaffold, read [references/alternative-scaffolds.md](references/alternative-scaffolds.md) and use the selected structure.
-4. Create the output file at `.product/define/vision/vision.md`. Create the `.product/define/vision/` directory if it does not exist.
+4. Create the output file at `.product/define/vision.md`. Create the `.product/define/` directory if it does not exist.
 5. Write the front matter:
    ```markdown
    > **Owner:** [name or "TBD"]
@@ -142,7 +143,7 @@ If the draft fails any item, revise and re-check. Iterate internally until the d
    - Which sections drew from research vs. user input
    - Any sections where the draft required assumptions (flag these)
 2. Note any unresolved items — e.g., owner TBD, missing principles, placeholder review date
-3. Link to `.product/define/vision/vision.md`
+3. Link to `.product/define/vision.md`
 4. Ask: "What feels wrong? What's missing?" — not "does this look good?" (the latter produces hollow approvals)
 
 ## Edge Cases
@@ -150,7 +151,7 @@ If the draft fails any item, revise and re-check. Iterate internally until the d
 If the user asks for a **team-level or feature-level vision**:
   → Stop. Explain that product vision is a leadership artifact owned by a product leader and covers the full product. Suggest `write-prd` for feature-level direction.
 
-If the user asks to **update an existing vision** at `.product/define/vision/vision.md`:
+If the user asks to **update an existing vision** at `.product/define/vision.md`:
   → Read the existing file. Ask what is changing and why. Preserve sections that are not changing. Update `Last updated` to today and push `Next review` forward if significant revisions were made. Do not fork versions — vision is a living document.
 
 If the user wants to **write vision without research or a developed idea**:
@@ -163,7 +164,7 @@ If `.product/discover/research/*.md` exists but is **older than 12 months**:
   → Flag that the research may be stale. Ask whether to refresh research first (run `prepare-user-research`) or proceed with stale data. Note the staleness in the vision front matter if proceeding.
 
 If the user wants the vision **at a non-default path**:
-  → Accept but warn: future skills (`write-prd`, `prioritize`, etc.) will expect the default path `.product/define/vision/vision.md`. If the user insists, document the custom path in a CLAUDE.md or project-level note.
+  → Accept but warn: downstream skills (`define-product`, `write-prd`, `prioritize`, etc.) expect the default path `.product/define/vision.md`. If the user insists, document the custom path in a CLAUDE.md or project-level note.
 
 If the user cannot produce **any real conflicts** when eliciting principles:
   → This signals either (a) the product is too new to have principles or (b) the user is not close enough to product decisions. Suggest deferring Section 6 with a placeholder ("TBD — will draft after first quarter of shipping") rather than filling it with platitudes.

@@ -1,6 +1,6 @@
 # Cagan Canon and Writing Guide
 
-The knowledge spine for the `write-vision` skill. Read this before drafting any vision document and again during review.
+The knowledge spine for the `define-vision` skill. Read this before drafting any vision document and again during review.
 
 ## Contents
 
@@ -68,7 +68,7 @@ Cagan has stated that "most people, when they show their product vision, are rea
 
 "The difference between vision and strategy is analogous to the difference between good leadership and good management. Leadership inspires and sets the direction; management helps us get there." (Cagan, *Inspired* 2nd ed.)
 
-Strategy work is **out of scope** for `write-vision`. If the user describes quarterly bets or beachheads, redirect them — this belongs in a future `write-strategy` skill.
+Strategy work is **out of scope** for `define-vision`. If the user describes quarterly bets or beachheads, redirect them — this belongs in a future `write-strategy` skill.
 
 ### Vision vs. Product Principles
 
@@ -96,7 +96,7 @@ Product Vision
       → Product Discovery (solutions)
 ```
 
-OKRs are out of scope. Do not generate them as part of `write-vision`.
+OKRs are out of scope. Do not generate them as part of `define-vision`.
 
 ### Vision vs. Roadmap
 
