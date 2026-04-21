@@ -67,7 +67,7 @@ If the **opportunity has no tree** (`map-opportunities` was skipped):
   → Slicing is still possible but risk identification in Step 2 becomes coarser. Lean on the opportunity's Confidence and Cost of Inaction to infer risk type. If risk cannot be identified with confidence, offer to run `map-opportunities` first for a sharper slice.
 
 If the user wants to **slice across two opportunities at once**:
-  → Decline. A slice that spans two framings has two problem statements, two success signals, and two users — it becomes a product PRD, not a slice. Ask which opportunity to slice first; the other becomes a later slice or a Not now entry.
+  → Decline. A slice that spans two framings has two problem statements, two success signals, and two users — it becomes a multi-opportunity initiative, not a slice. Ask which opportunity to slice first; the other becomes a later slice or a Not now entry.
 
 If the **committed opportunity is already narrow** (a single user, a single job, clearly de-risked):
   → Slicing still produces an In / Out / Not now discipline that the PRD consumes. Write the slice with a narrower scope section — the signals still pass the quality check (quantitative, pre-written, with an inconclusive zone). Do not manufacture risk to justify a more elaborate shape.

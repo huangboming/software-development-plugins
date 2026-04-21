@@ -1,7 +1,7 @@
 {
     "name": "define",
-    "version": "0.1.0",
-    "description": "Turn framed opportunities into committable specs — prioritize opportunities, define product vision, and write PRDs that every later phase can execute against.",
+    "version": "0.2.0",
+    "description": "Turn framed opportunities into committable specs — define the product, write a vision, prioritize opportunities, slice the MVP, set metrics, and write PRDs that every later phase can execute against.",
     "author": {
         "name": "Boming Huang"
     }

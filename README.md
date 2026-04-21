@@ -72,7 +72,7 @@ Run this end-to-end when you're greenfield — no code, no backlog, maybe just a
 |------|-------|---------------------|-------|
 | 1 | Discover | "prepare user research for this idea" → "synthesize the findings" → "frame the problem" | `discover:prepare-user-research`, `discover:synthesize-research`, `discover:frame-problem` |
 | 2 | Discover | "map the opportunity tree" → "test the riskiest assumption" | `discover:map-opportunities`, `discover:test-assumption` |
-| 3 | Define | "write a product vision" → "slice the MVP" → "set success metrics" → "write a PRD for the first release" → "write user stories" | `define:write-vision`, `define:slice-mvp`, `define:set-success-metrics`, `define:write-prd`, `define:write-user-story` |
+| 3 | Define | "define the product" → "write a product vision" → "slice the MVP" → "set success metrics" → "write a PRD for the first release" → "write user stories" | `define:define-product`, `define:define-vision`, `define:slice-mvp`, `define:set-success-metrics`, `define:write-prd`, `define:write-user-story` |
 | 4 | Build | "scaffold a new \<stack\> project" | `build:scaffold-project` |
 | 5 | Harness | "set up project CLAUDE.md rules" / "add a skill for \<X\>" | `harness:create-rules`, `harness:create-skill` |
 | 6 | Design | "design the technical spec for \<feature\>" | `design:design-spec` |
