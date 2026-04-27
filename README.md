@@ -62,44 +62,12 @@ See the [Claude Code plugin docs](https://docs.claude.com/en/docs/claude-code) f
 
 Once a plugin is installed, Claude Code auto-invokes its skills from the natural-language triggers declared in each `SKILL.md` — you rarely need to call a skill by name. Agents are invoked via the `Task` tool (or by skills that delegate to them), e.g. `ship:write-readme` delegates to the `readme-writer` agent.
 
-The two common entry points:
+End-to-end workflows live in [`workflows/`](workflows/):
 
-#### Start a brand-new project
+- [Greenfield project](workflows/greenfield-project.md) — idea to first GitHub release.
+- [Existing project](workflows/existing-project.md) — feature, fix, or chore on a live codebase.
 
-Run this end-to-end when you're greenfield — no code, no backlog, maybe just an idea.
-
-| Step | Phase | Say something like… | Skill |
-|------|-------|---------------------|-------|
-| 1 | Discover | "prepare user research for this idea" → "synthesize the findings" → "frame the problem" | `discover:prepare-user-research`, `discover:synthesize-research`, `discover:frame-problem` |
-| 2 | Discover | "map the opportunity tree" → "test the riskiest assumption" | `discover:map-opportunities`, `discover:test-assumption` |
-| 3 | Define | "define the product" → "write a product vision" → "slice the MVP" → "set success metrics" → "write a PRD for the first release" → "write user stories" | `define:define-product`, `define:define-vision`, `define:slice-mvp`, `define:set-success-metrics`, `define:write-prd`, `define:write-user-story` |
-| 4 | Build | "scaffold a new \<stack\> project" | `build:scaffold-project` |
-| 5 | Harness | "set up project CLAUDE.md rules" / "add a skill for \<X\>" | `harness:create-rules`, `harness:create-skill` |
-| 6 | Design | "design the technical spec for \<feature\>" | `design:design-spec` |
-| 7 | — | **Implement the spec** — write the code yourself (or with Claude Code's editing loop); no dedicated skill. | _(no skill)_ |
-| 8 | Build | During implementation, at each phase: "simplify this code" / "guard the tests" / "check for boundary leaks" | `build:simplify-code`, `build:guard-test`, `build:guard-boundary` |
-| 9 | Build | "commit these changes" → "create a PR" | `build:commit-changes`, `build:create-pr` |
-| 10 | Verify | "review the code on this branch" | `verify:review-code` |
-| 11 | Docs | "write architecture docs" / "write API docs" | `docs:write-architecture`, `docs:write-api` |
-| 12 | Ship | "set up the CI pipeline" → "write a README" → "tag v0.1.0" → "create a GitHub release" | `ship:generate-pipeline`, `ship:write-readme`, `ship:tag-release`, `ship:create-github-release` |
-
-#### Work with an existing project
-
-Use this loop for each feature, fix, or chore on an already-live codebase.
-
-| Step | Phase | Say something like… | Skill |
-|------|-------|---------------------|-------|
-| 1 | Discover | "capture this user signal" (features) / "capture this bug" (defects) → "frame the problem" | `discover:capture-signal`, `build:capture-issue`, `discover:frame-problem` |
-| 2 | Define | "prioritize" → "slice the MVP" → "set success metrics" → "write a PRD for \<feature\>" → "write user stories" | `define:prioritize`, `define:slice-mvp`, `define:set-success-metrics`, `define:write-prd`, `define:write-user-story` |
-| 3 | Design | "design the technical approach for \<feature\>" | `design:design-spec` |
-| 4 | — | **Implement the spec** — write the code yourself (or with Claude Code's editing loop); no dedicated skill. | _(no skill)_ |
-| 5 | Build | During implementation, at each phase: "simplify this code" / "guard the tests" / "check for boundary leaks" | `build:simplify-code`, `build:guard-test`, `build:guard-boundary` |
-| 6 | Build | "commit changes" → "clean up the branch" → "create a PR" | `build:commit-changes`, `build:cleanup-branch`, `build:create-pr` |
-| 7 | Verify | "review the code" | `verify:review-code` |
-| 8 | Docs | "update the API / architecture docs" | `docs:write-api`, `docs:write-architecture` |
-| 9 | Ship | "tag release" → "write changelog" → "write release notes" → "publish GitHub release" | `ship:tag-release`, `ship:write-changelog`, `ship:write-release-note`, `ship:create-github-release` |
-
-You don't have to run every step. Skip what doesn't apply, and invoke skills out of order whenever the work demands it — this is a menu, not a pipeline.
+Each workflow lists the skill sequence, decision points (when to skip a step or loop back), and artifacts produced. These are menus, not pipelines — skip what doesn't apply, and invoke skills out of order whenever the work demands it.
 
 ## Settings
 
