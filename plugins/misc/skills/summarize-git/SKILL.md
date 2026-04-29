@@ -13,7 +13,7 @@ Generate a markdown summary of the user's git activity for a given period (daily
 2. Determine the period. If the user says "today" or "daily" → daily. "This week" or "weekly" → weekly. "This month" or "monthly" → monthly. If ambiguous, ask.
 3. Run the stats script to gather raw data:
    ```bash
-   uv run --script ${CLAUDE_PLUGIN_ROOT}/skills/git-summary/scripts/git_stats.py --period {daily|weekly|monthly} [--date DATE] [path ...]
+   uv run --script ${CLAUDE_PLUGIN_ROOT}/skills/summarize-git/scripts/git_stats.py --period {daily|weekly|monthly} [--date DATE] [path ...]
    ```
    - `--period`: required — `daily`, `weekly`, or `monthly`.
    - `--date`: optional — `YYYY-MM-DD` for daily/weekly, `YYYY-MM` for monthly. Omit to default to the current period.
