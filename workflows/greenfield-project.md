@@ -9,7 +9,7 @@ Use this end-to-end when you're greenfield — no code, no backlog, maybe just a
 | 1 | Define | "grill me on the product" → "write product.md" → "grill me on the first feature" → "write a PRD for the first release" | `define:grill-me`, `define:write-product-md`, `define:grill-me`, `define:write-prd` |
 | 2 | Build | "scaffold a new \<stack\> project" | `build:scaffold-project` |
 | 3 | Harness | "set up project CLAUDE.md rules" / "add a skill for \<X\>" | `harness:create-rules`, `harness:create-skill` |
-| 4 | Design | "design the technical spec for \<feature\>" | `design:design-spec` |
+| 4 | Design | "write a tech spec for \<feature\>" | `design:write-spec` |
 | 5 | — | **Implement the spec** — write the code yourself (or with Claude Code's editing loop); no dedicated skill. | _(no skill)_ |
 | 6 | Build | During implementation, at each phase: "simplify this code" / "guard the tests" / "check for boundary leaks" | `build:simplify-code`, `build:guard-test`, `build:guard-boundary` |
 | 7 | Build | "commit these changes" → "create a PR" | `build:commit-changes`, `build:create-pr` |

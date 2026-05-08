@@ -7,7 +7,7 @@ Use this loop for each feature, fix, or chore on an already-live codebase.
 | Step | Phase | Say something like… | Skill |
 |------|-------|---------------------|-------|
 | 1 | Define | "grill me on \<feature\>" → "write a PRD for \<feature\>" | `define:grill-me`, `define:write-prd` |
-| 2 | Design | "design the technical approach for \<feature\>" | `design:design-spec` |
+| 2 | Design | "write a tech spec for \<feature\>" | `design:write-spec` |
 | 3 | — | **Implement the spec** — write the code yourself (or with Claude Code's editing loop); no dedicated skill. | _(no skill)_ |
 | 4 | Build | During implementation, at each phase: "simplify this code" / "guard the tests" / "check for boundary leaks" | `build:simplify-code`, `build:guard-test`, `build:guard-boundary` |
 | 5 | Build | "commit changes" → "clean up the branch" → "create a PR" | `build:commit-changes`, `build:cleanup-branch`, `build:create-pr` |
