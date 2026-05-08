@@ -36,7 +36,7 @@ Summarize the audit for the user:
 
 ## Step 3: Discovery Consultation
 
-Read [discovery-guide.md](../references/discovery-guide.md). Run the same multiple-choice consultation rounds as the Create workflow (Q1-Q17), but informed by audit results. Add Track 5 questions (Q18-Q20) using audit findings to populate the options.
+Run the same multiple-choice consultation rounds as the Create workflow, but informed by audit results. Add a track of audit-driven questions using audit findings to populate the options.
 
 Key differences from Create:
 
@@ -46,7 +46,7 @@ Key differences from Create:
 
 ## Step 4: Derive Token Values
 
-Read [token-derivation-guide.md](../references/token-derivation-guide.md). Follow the same derivation process as Create, with one addition:
+Follow the same derivation process as Create, with one addition:
 
 For each proposed token, note which existing values it replaces or consolidates. Example: "primary-600 (#2563eb) consolidates the 4 blues currently in use: #2563eb, #2564ec, #3b82f6, #1d4ed8."
 
@@ -54,9 +54,7 @@ Anchor proposals in what the codebase already uses — consolidate rather than r
 
 ## Step 5: Draft
 
-Read [design-system-template.md](../references/design-system-template.md). Then read at least one file from [examples/](../references/examples/) to internalize prose voice and recipe density — pick the example whose product type matches the user's (the table in [SKILL.md](../SKILL.md#examples) shows which fits which archetype).
-
-Create `DESIGN.md` at the project root following the template. Key drafting moves:
+Read [design-system-template.md](../references/design-system-template.md). Create `DESIGN.md` at the project root following it. Key drafting moves:
 
 1. **Visual Theme & Atmosphere** — 2-3 paragraphs of evocative prose grounded in both discovery findings and the audit. Describe how this system relates to the existing codebase. Add a "Key Characteristics" bullet list of 6-10 signature elements.
 2. **Design Principles** — 3-5 principles with rationale tied to both discovery and audit findings.

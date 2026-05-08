@@ -26,9 +26,7 @@ Ground every finding in specific file paths.
 
 ## Step 2: Draft
 
-Read [design-system-template.md](../references/design-system-template.md). Then read at least one file from [examples/](../references/examples/) to internalize prose voice and recipe density — pick the example whose aesthetic matches the codebase (the table in [SKILL.md](../SKILL.md#examples) shows which fits which archetype).
-
-Create `DESIGN.md` at the project root following the template. Key drafting moves:
+Read [design-system-template.md](../references/design-system-template.md). Create `DESIGN.md` at the project root following it. Key drafting moves:
 
 1. **Visual Theme & Atmosphere** — 2-3 paragraphs of evocative prose describing the *feel* of the existing system. Ground it in what you observed in the codebase (canvas, typographic voice, color restraint, structural moves). Add a "Key Characteristics" bullet list of 6-10 signature elements actually present in the code.
 2. **Design Principles** — 3-5 principles inferred from the codebase patterns.

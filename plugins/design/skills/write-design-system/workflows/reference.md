@@ -23,9 +23,7 @@ Most real-world design starts from a reference, not a blank canvas. When the use
 
 ## Step 1: Pick the Reference
 
-Survey the available examples in [SKILL.md → Examples](../SKILL.md#examples) — each entry lists archetype and best-fit product types. Each example file is a real public system extracted from awesome-design-md, with full prose, recipes, and Agent Prompt Guide intact.
-
-If none of the vendored examples match, ask the user to pick a product from the [awesome-design-md catalog](https://github.com/VoltAgent/awesome-design-md) and fetch its `DESIGN.md` as the starting point. Vendor the file into `references/examples/` if the user wants it persisted.
+Confirm the named reference product (Linear, Vercel, Stripe, Notion, Apple, Spotify, etc.). If the user wants a public reference whose `DESIGN.md` is published in [awesome-design-md](https://github.com/VoltAgent/awesome-design-md), fetch it as the starting point. Otherwise, work from your knowledge of the product's visual system.
 
 Confirm the choice before proceeding: "I'll anchor on the [reference] system. We'll keep its [signature characteristic 1] and [characteristic 2], and adapt the rest to your project."
 
@@ -40,13 +38,13 @@ Ask focused questions only about what should differ from the reference. Skip the
 5. **Accent uses** — Keep the reference's restraint level (single accent vs. multiple)?
 6. **Component library constraint** — Does the user need to align with shadcn/MUI/Chakra/etc., which constrains the token names?
 
-Use multiple-choice questions per the [discovery-guide.md](../references/discovery-guide.md) consultation approach. Each delta the user picks becomes a documented adaptation note.
+Use multiple-choice questions for every delta — users react to options far more easily than generating answers. Each delta becomes a documented adaptation note.
 
 ## Step 3: Adapt Token Values
 
 For each section of the reference, decide: keep, adapt, or replace.
 
-1. **Color** — If brand color changes, regenerate the brand palette using the [token-derivation-guide.md](../references/token-derivation-guide.md) HSL approach. Keep the semantic structure (background/card/popover/muted/primary/etc.) and the surface count. Re-verify WCAG AA contrast on every changed pairing.
+1. **Color** — If brand color changes, regenerate the brand palette in HSL: assign the brand hue at 500/600 and derive the 50–950 ramp from there. Keep the semantic structure (background/card/popover/muted/primary/etc.) and the surface count. Re-verify WCAG AA contrast on every changed pairing.
 2. **Typography** — If font changes, keep the same scale ratio and weight system, just swap the family. If density changes, adjust the scale ratio (denser = smaller ratio).
 3. **Spacing** — Keep the reference's base unit unless density changes substantially.
 4. **Components** — Keep the reference's recipes unchanged where possible. Update only the values that depend on the changed tokens (background, text color, border).
@@ -56,7 +54,7 @@ For every change, record what it replaces in the reference. This becomes the "Ad
 
 ## Step 4: Draft
 
-Read [design-system-template.md](../references/design-system-template.md). Then read the chosen reference example in full to internalize its prose voice, recipe density, and section thickness.
+Read [design-system-template.md](../references/design-system-template.md). If a public `DESIGN.md` was fetched in Step 1, read it in full to internalize prose voice and recipe density.
 
 Create `DESIGN.md` at the project root:
 

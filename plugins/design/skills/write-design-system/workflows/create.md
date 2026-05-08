@@ -11,8 +11,6 @@ Design a complete design system from scratch for a new project through multi-rou
 
 ## Step 1: Discovery Consultation
 
-Read [discovery-guide.md](../references/discovery-guide.md) for question banks, brand personality framework, and product type matrix.
-
 Act as a design consultant. Present multiple-choice options for every question — users react to curated options far more easily than generating answers from scratch. Ask 2-4 questions per round, building on previous answers.
 
 **Round structure:**
@@ -28,8 +26,6 @@ Transition to Step 2 when product context, brand personality, content model, and
 
 ## Step 2: Derive Token Values
 
-Read [token-derivation-guide.md](../references/token-derivation-guide.md) for derivation methods and reference token sets.
-
 Translate discovery findings into specific token values:
 
 1. **Color** — Select brand hue → assign as 500/600 → generate primitive palette (50-950) → assign semantic tokens (light + dark) → verify contrast (WCAG AA: 4.5:1 normal text, 3:1 large text).
@@ -43,9 +39,7 @@ Every recommendation needs a rationale tied to the discovery conversation.
 
 ## Step 3: Draft
 
-Read [design-system-template.md](../references/design-system-template.md) for the output template. Then read at least one file from [examples/](../references/examples/) to internalize prose voice and recipe density — pick the example whose product type matches the user's (the table in [SKILL.md](../SKILL.md#examples) shows which fits which archetype).
-
-Create `DESIGN.md` at the project root following the template. Key drafting moves:
+Read [design-system-template.md](../references/design-system-template.md) for the output template. Create `DESIGN.md` at the project root following it. Key drafting moves:
 
 1. **Visual Theme & Atmosphere** — 2-3 paragraphs of evocative prose grounded in discovery findings, then a "Key Characteristics" bullet list of 6-10 non-negotiable signature elements. This section is what lets an agent make borderline judgement calls — make it specific and value-bearing, not generic.
 2. **Design Principles** — 3-5 principles with rationale tied to discovery findings.
