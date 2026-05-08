@@ -58,7 +58,7 @@
 
 ## Next Steps After Result
 
-- **If success:** [what the next action is — typically: flip source opportunity Status to `validated`, route to `prioritize` or `slice-mvp`.]
+- **If success:** [what the next action is — typically: flip source opportunity Status to `validated`, route to `write-prd`.]
 - **If kill:** [what the next action is — typically: drop the solution branch, reopen `map-opportunities` for the sub-outcome, or re-frame at a higher level.]
 - **If inconclusive:** [what the next action is — typically: redesign with a tighter stimulus or larger sample, not a re-run with the same setup.]
 ```

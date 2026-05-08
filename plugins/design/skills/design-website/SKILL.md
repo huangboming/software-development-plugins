@@ -72,7 +72,6 @@ After delivery, route the user to the right next-step skill based on what they w
 | Define visual design system (tokens, typography, components) | `harness:write-design-system` |
 | Spec a feature's backend/frontend architecture | `design:design-spec` |
 | Scaffold the implementation | `build:scaffold-project` |
-| Decide what to build first within the new IA | `define:slice-mvp` |
 | Capture additional product signals from this design | `discover:capture-signal` |
 
 ## Edge cases & gotchas

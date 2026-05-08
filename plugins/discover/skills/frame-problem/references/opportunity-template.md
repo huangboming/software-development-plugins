@@ -119,8 +119,7 @@ Written by this skill as `framed`. Downstream skills update it:
 |--------|--------|
 | framed | `frame-problem` (this skill) |
 | validated | `test-assumption` after a successful assumption test |
-| prioritized | `prioritize` (in `define`) |
-| scoped | `slice-mvp` or `write-prd` (in `define`) |
+| scoped | `write-prd` (in `define`) |
 | shipped | manual, after launch |
 | archived | manual, when abandoned — record reason in the file |
 

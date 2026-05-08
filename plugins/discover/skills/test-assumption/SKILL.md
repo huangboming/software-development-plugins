@@ -77,13 +77,13 @@ Test designed: **admins-accept-wizard**
 - Timebox: 14 days active
 - File: .product/discover/assumptions/admins-accept-wizard.md
 
-Next: run the test (this skill designs only). When the result lands, update Status in the plan file and in the source opportunity, then route to prioritize (in define) or slice-mvp.
+Next: run the test (this skill designs only). When the result lands, update Status in the plan file and in the source opportunity, then route to write-prd (in define).
 ```
 
 ## Edge Cases
 
 If the **source tree has no `high`-risk assumption** (only `medium` and `low`):
-  → Offer to test the highest `medium`-risk assumption, or route to `prioritize` (in `define`) if confidence is already strong enough. Do not synthesize a high-risk assumption to justify a test — a test without a risk is theatre.
+  → Offer to test the highest `medium`-risk assumption, or route to `write-prd` (in `define`) if confidence is already strong enough. Do not synthesize a high-risk assumption to justify a test — a test without a risk is theatre.
 
 If the **source opportunity is marked `speculative`** and the user wants to test a solution-level assumption:
   → Pause. A `speculative` opportunity has a load-bearing assumption upstream of any solution (often "this pain exists at meaningful frequency"). Offer to test the framing-level assumption first — a passing solution test on a wrong opportunity is wasted effort.

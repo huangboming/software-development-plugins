@@ -32,7 +32,7 @@
 
 ## Pruning Notes
 
-[Optional. Capture branches discussed and dropped, with a one-line rationale each. Useful downstream for `prioritize` — records what was considered so the same ideas do not resurface without new evidence.]
+[Optional. Capture branches discussed and dropped, with a one-line rationale each. Useful downstream — records what was considered so the same ideas do not resurface without new evidence.]
 ```
 
 ## Field Guidance
@@ -107,7 +107,7 @@ Write the specific claim, not the category:
 | medium | Assumption is plausible from analogous cases but not directly tested in this context |
 | high | Assumption is novel, load-bearing, and has no direct evidence |
 
-`test-assumption` prioritizes `high` first, then `medium`. A solution whose key assumption is `low` is usually ready to enter `prioritize` without a separate test.
+`test-assumption` prioritizes `high` first, then `medium`. A solution whose key assumption is `low` is usually ready to enter `write-prd` without a separate test.
 
 ### Slug naming
 

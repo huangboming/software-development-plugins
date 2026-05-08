@@ -12,8 +12,7 @@ Look for, in this order:
 |---|---|---|
 | Opportunity brief | `.product/discover/opportunities/<slug>.md` | Who / Pain / What Good Looks Like / Non-Goals |
 | Slice / MVP scope | `.product/define/slices/<slug>.md` | What's in / out for v1 |
-| PRD | `.product/define/specs/<feature>/v<N>.md` | Functional scope |
-| Success metrics | `.product/define/metrics/<slug>.md` | The primary business outcome |
+| PRD | `.product/define/specs/<feature>/v<N>.md` | Functional scope and success metrics |
 | User research | `.product/discover/research/*.md` | Personas, JTBDs |
 
 When found, summarize back to the user in 3-5 lines what you're treating as fixed input from each artifact. Let them correct the summary before proceeding.

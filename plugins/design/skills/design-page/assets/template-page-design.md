@@ -236,8 +236,6 @@ Numbered list of unresolved decisions, with the cost of leaving them open and th
 | Feature backend/frontend architecture | `design:design-spec` per feature on this page |
 | Website structure / IA (if upstream) | `design:design-website` |
 | Implementation scaffolding | `build:scaffold-project` |
-| Break this page's features into backlog stories | `define:write-user-story` |
-| Decide what to build first if the page is large | `define:slice-mvp` |
 
 ---
 

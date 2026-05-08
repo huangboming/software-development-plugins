@@ -161,7 +161,7 @@ Numbered list of unresolved decisions, with the cost of leaving them open and th
 | Feature tech specs | `design:design-spec` per feature |
 | Design system (tokens, type, components) | `harness:write-design-system` |
 | Implementation scaffolding | `build:scaffold-project` |
-| Release planning | `define:slice-mvp`, `define:write-prd` |
+| Release planning | `define:write-prd` |
 
 ---
 

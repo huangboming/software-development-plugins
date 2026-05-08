@@ -72,7 +72,7 @@ Mapped: **new-admin-config-inheritance**
 - 3 solutions carry high-risk assumptions → strong candidates for test-assumption
 - File: .product/discover/opportunities/tree-new-admin-config-inheritance.md
 
-Next: test-assumption on the riskiest branch, or prioritize (in define) once the riskiest assumptions have been tested.
+Next: test-assumption on the riskiest branch, or write-prd (in define) once the riskiest assumptions have been tested.
 ```
 
 ## Edge Cases

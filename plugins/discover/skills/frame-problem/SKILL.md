@@ -72,7 +72,7 @@ Framed: **New admins inherit a broken configuration**
 - Confidence: moderate (synthesis theme "admin handoff" + 3 signals)
 - File: .product/discover/opportunities/new-admin-config-inheritance.md
 
-Next: map-opportunities (explore solution shapes) or prioritize (in define).
+Next: map-opportunities (explore solution shapes) or write-prd (in define).
 ```
 
 For batch framing (multiple themes handed over at once): scan all inputs first and collect classification flags (solution-shaped, too-broad) together, surface them in one pass before processing any, then process each opportunity through steps 2–4 and present a summary table at the end with one row per opportunity.
