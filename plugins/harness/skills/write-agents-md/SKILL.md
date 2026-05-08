@@ -1,9 +1,7 @@
 ---
 name: write-agents-md
-description: "Write or update AGENTS.md at project root — the universal coding-agent context file capturing this project's commands, conventions, and gotchas. Triggers: '/write-agents-md', 'write AGENTS.md', 'create AGENTS.md', 'init AGENTS.md', 'update AGENTS.md', 'bootstrap agents config'."
+description: "Write or update AGENTS.md at project root. Triggers: '/write-agents-md', 'write AGENTS.md', 'create AGENTS.md', 'init AGENTS.md', 'update AGENTS.md', 'bootstrap agents config'."
 ---
-
-Write or update `AGENTS.md` at project root — the universal coding-agent context file (per the agents.md open standard). Captures commands, conventions, and gotchas not derivable from the code.
 
 ## Process
 
@@ -49,7 +47,7 @@ Title: ≤72 chars, conventional-commit style.
 
 Body sections: **Summary** · **Problem** · **Proposed Solution** · **Key Changes**.
 
-## Release
+## Release *(omit if no release process)*
 
 1. Update `CHANGELOG.md` (Keep a Changelog format).
 2. Bump version in manifest files.

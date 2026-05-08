@@ -1,39 +1,45 @@
 # Core Principles for Skill Authoring
 
-These principles apply to every skill. Internalize them before writing SKILL.md or reference files.
+Hard rules. Apply on every line of every skill.
 
-## Concise is Key
+## Radical minimalism
 
-The context window is a shared, finite resource. Skills compete for attention with the system prompt, conversation history, other skills' metadata, and the user's actual request. Every unnecessary token dilutes the signal of necessary ones.
+A skill earns its tokens by encoding what Claude does *not* already know. Generic coding advice, restatements of training, and catalogs of public best-practice dilute signal.
 
-**The justification test:** For each piece of content, ask: "Would Claude handle this incorrectly without this information?" If the answer is no, cut it. Prefer concise examples over verbose explanations — examples communicate more per token.
+Before keeping any line, ask the **four signal-to-noise tests:**
 
-See `rules/context-engineering.md` for a complete framework on allocating content across SKILL.md, references, scripts, and assets.
+1. **Justification** — Would Claude handle this incorrectly without this line? If no, cut.
+2. **Duplication** — Does this exist elsewhere in the skill (or in CLAUDE.md, or in this file's frontmatter)? If yes, keep one copy.
+3. **Example** — Can a concrete example replace this explanation? If yes, prefer the example.
+4. **Knowledge** — Does Claude already know this from training? If yes, cut.
 
-## Push Claude Off Its Defaults
+**Procedural skill SKILL.md ≤ 30–40 lines.** Past that, content belongs in `rules/`, `workflows/`, or `references/` — or it's not earning its keep.
 
-Claude already knows a lot about general coding, common libraries, and popular frameworks. A skill earns its tokens by telling Claude what it does *not* already know or would get wrong by default.
+## Decay-vs-read test for keep / drop / slim
 
-Before writing an instruction, ask: "would Claude already do this without being told?" If yes, cut it. Focus on:
+A skill earns its place by being read more often than its content decays. For each skill or sub-file:
 
-- Non-obvious gotchas and failure modes specific to this domain or codebase
-- Internal conventions that differ from community defaults
-- Opinions that override Claude's usual taste (e.g., "do not use the Inter font or purple gradients" in a design skill)
+- **High read, low decay** — keep. (Stable conventions, frontmatter contracts, gotchas that don't move.)
+- **Low read, high decay** — drop. (Catalogs of "current best practices," lists of public reference products, anything that goes stale faster than it gets consulted.)
+- **High read, high decay** — slim aggressively and link to a moving source instead of mirroring it.
 
-Generic coding advice dilutes signal. Surprising, specific, organization-flavored content is what makes a skill worth loading.
+When uncertain, drop. A missing skill is a smaller cost than a misleading one.
 
-## Set Appropriate Degrees of Freedom
+## Write-skill purity
 
-Match the level of specificity to the task's fragility and variability:
+`write-*` and `create-*` skills emit artifacts. They do not interview, grill, debate, or deliberate. Interrogation is a separate skill (`grill-me`). Mixing the two produces a skill that won't fire when the user wants pure emission, and won't ask enough questions when they want alignment.
 
-- **High freedom (text-based instructions)** — Use when multiple approaches are valid, decisions depend on context, or heuristics guide the approach.
-- **Medium freedom (pseudocode or scripts with parameters)** — Use when a preferred pattern exists, some variation is acceptable, or configuration affects behavior.
-- **Low freedom (specific scripts, few parameters)** — Use when operations are fragile and error-prone, consistency is critical, or a specific sequence must be followed.
+If a skill's intake feels like it needs a long Q&A, that Q&A belongs upstream of this skill, not inside it.
 
-Think of Claude as exploring a path: a narrow bridge with cliffs needs specific guardrails (low freedom), while an open field allows many routes (high freedom).
+## Push Claude off its defaults
 
-## Avoid Railroading
+A skill's most valuable lines are the surprising ones — non-obvious gotchas, internal conventions that contradict community defaults, opinions that override Claude's usual taste.
 
-Skills are reused across many situations. Over-specifying a procedure makes the skill brittle — Claude follows the script even when the situation calls for adaptation.
+If every line of a skill could have been derived from "use sensible defaults," the skill is paying tokens for nothing.
 
-Give Claude the information it needs, then leave room for judgment. Prefer "when X, do Y because Z" over rigid numbered steps, unless the sequence is genuinely fragile. Reserve low-freedom scripts for the places where consistency truly matters; everywhere else, trust Claude to compose.
+## Set degrees of freedom deliberately
+
+- **Numbered steps + scripts** — fragile sequences where consistency is critical.
+- **Prose guidance** — judgment-heavy tasks where multiple approaches are valid.
+
+Don't railroad a flexible task with rigid steps; don't prose-describe a fragile sequence. Match the form to the fragility.

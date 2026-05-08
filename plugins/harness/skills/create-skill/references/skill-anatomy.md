@@ -1,88 +1,42 @@
 # Skill Anatomy
 
-Folder structure, file types, and when to use each.
+The non-derivable conventions for skill folder shape and frontmatter. Read on every authoring task.
 
-## Basic Layout
-
-Every skill consists of a required SKILL.md file and optional bundled resources:
+## Folder layout
 
 ```
 skill-name/
-├── SKILL.md (required)
-│   ├── YAML frontmatter metadata (required)
-│   │   ├── name: (required)
-│   │   └── description: (required)
-│   └── Markdown instructions (required)
-└── Bundled Resources (optional)
-    ├── rules/            - Imperative constraints ("you must do X")
-    ├── workflows/        - Ordered step-by-step procedures
-    ├── references/       - Explanatory material loaded on demand
-    ├── scripts/          - Executable code (Python/Bash/etc.)
-    └── assets/           - Files used in output (templates, icons, fonts, etc.)
+├── SKILL.md              required
+├── rules/                imperative constraints — "you must do X"
+├── workflows/            ordered procedures — "step 1, then 2, then 3"
+├── references/           descriptive material — "X happens because Y"
+├── scripts/              executable code (Python, Bash, etc.)
+└── assets/               output templates, fonts, images
 ```
 
-## SKILL.md (required)
+Not every skill needs every directory.
 
-Two parts:
+## SKILL.md frontmatter
 
-- **Frontmatter (YAML)** — `name` and `description`. Read by Claude to decide when the skill triggers, so write it clearly and comprehensively.
-- **Body (Markdown)** — Instructions and guidance. Loaded *only* after the skill triggers.
+Exactly two required fields:
 
-## Bundled Resources
+```yaml
+---
+name: skill-name              # hyphen-case identifier, matches the directory name
+description: One imperative sentence stating what the skill does or produces, plus concrete trigger phrases users would actually say.
+---
+```
 
-### Scripts (`scripts/`)
+Optional: `license: …` referencing a `LICENSE.txt` in the skill directory.
 
-Executable code for tasks that require deterministic reliability or are repeatedly rewritten.
+The `description` is the **trigger mechanism** — Claude reads it to decide whether to load the body. All "when to use" information goes here, not in the body. A `## When to Use This Skill` section inside the body is invisible to routing.
 
-- **Include when** the same code is being rewritten repeatedly or deterministic reliability is needed.
-- **Example**: `scripts/rotate_pdf.py` for PDF rotation.
-- **Benefits**: Token efficient, deterministic, executed without loading into context.
-- **Note**: Scripts may still need to be read by Claude for patching or environment-specific adjustments.
+## Loading model (progressive disclosure)
 
-### Rules (`rules/`)
+Three tiers, paid in this order:
 
-Long-term constraints that must always be followed. Imperative-shaped.
+1. **Frontmatter** — loaded for every skill in the marketplace, every session. Cheapest tier; only `name` and `description` go here.
+2. **SKILL.md body** — loaded when the skill triggers. Should contain only what's needed every time the skill fires.
+3. **Bundled resources** (`rules/`, `workflows/`, `references/`) — loaded on demand from the body. Each file gets one index entry in SKILL.md naming *what* it contains and *when* to read it.
 
-- **Include when** the skill has invariants Claude must honor on every invocation.
-- **Examples**: `rules/coding-standards.md`, `rules/api-conventions.md`.
-- **Shape test**: content reads as "You must do X" or "Never do Y".
-
-### Workflows (`workflows/`)
-
-Ordered step-by-step procedures for specific tasks. Sequence-shaped.
-
-- **Include when** the skill has multi-step processes where order and completeness matter.
-- **Examples**: `workflows/create-new-widget.md`, `workflows/deploy-release.md`.
-- **Shape test**: content reads as "Do step 1, then step 2, then step 3".
-
-### References (`references/`)
-
-Explanatory material, architecture notes, gotcha catalogues. Descriptive-shaped.
-
-- **Include when** detailed content is only needed for specific request types.
-- **Examples**: `references/finance.md` for schemas, `references/api_docs.md` for specs, `references/policies.md` for org rules.
-- **Shape test**: content reads as "Be careful of X" or "X happens because Y".
-- **Benefits**: Keeps SKILL.md lean, loaded only when Claude determines it's needed.
-- **Best practices**:
-  - For files >10k words, include grep search patterns in SKILL.md so Claude searches without loading in full.
-  - Each reference file gets exactly one index entry in SKILL.md with *what* it contains and *when* to read it.
-
-### Assets (`assets/`)
-
-Files not intended to be loaded into context, but used within the output Claude produces.
-
-- **Include when** the skill needs files for the final output.
-- **Examples**: `assets/logo.png`, `assets/slides.pptx`, `assets/frontend-template/`, `assets/font.ttf`.
-- **Benefits**: Separates output resources from documentation. Claude uses these files without loading them into the context window.
-
-## Classifying Content by Shape
-
-Always separate bundled content by shape into `rules/`, `workflows/`, and `references/`. When a piece of content sits on a boundary, classify by shape:
-
-| Content looks like | Target directory |
-|--------------------|------------------|
-| "You must do X" (imperative) | `rules/` |
-| "Do step 1, then step 2, then step 3" (ordered) | `workflows/` |
-| "Be careful of X" / "X happens because Y" (descriptive) | `references/` |
-
-Not every skill needs all three directories — a skill with no imperative constraints has no `rules/`, a skill with no procedures has no `workflows/`. But when a content type is present, it goes in the matching directory. Never mix content shapes in a single directory.
+Scripts and assets cost zero context — they're executed or copied into output without being read into the window.
