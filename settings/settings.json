@@ -95,6 +95,10 @@
     ],
     "defaultMode": "acceptEdits"
   },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "skipAutoPermissionPrompt": true,
   "statusLine": {
     "type": "command",
