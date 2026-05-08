@@ -6,7 +6,7 @@ description: "Write or update AGENTS.md at project root. Triggers: '/write-agent
 ## Process
 
 1. **Locate.** `AGENTS.md` at project root. Read if it exists.
-2. **Discover.** Explore the codebase to fill template values. Ask the user only for what isn't discoverable — especially Gotchas. Do not invent.
+2. **Discover.** Explore the codebase to fill template values. Ask the user only for what isn't discoverable — especially Gotchas, Architecture, and Domain Rules. Do not invent.
 3. **Draft against the template, review against the quality bar, present.**
 
 ## Template
@@ -28,9 +28,23 @@ description: "Write or update AGENTS.md at project root. Triggers: '/write-agent
 |---|---|
 | <Task> | <command> |
 
+## Architecture *(omit if none)*
+
+*System-structure rules: where code goes, how modules talk, layering boundaries.*
+
+- <rule>
+
+## Domain Rules *(omit if none)*
+
+*Invariants that must always hold. "If this is violated, the business breaks."*
+
+- <rule>
+
 ## Code Quality *(omit if none)*
 
-<Style or design rules not enforced by tooling.>
+*Line-level conventions: naming, idioms, error handling.*
+
+- <rule>
 
 ## Testing *(omit if Commands cover it)*
 
@@ -62,7 +76,7 @@ Body sections: **Summary** · **Problem** · **Proposed Solution** · **Key Chan
 
 ## Quality bar
 
-- ≤ 80 lines total. Over-detailed → cut.
+- ≤ 100 lines total. Over-detailed → cut.
 - Commands match manifests/scripts. No invented commands.
 - No content restating training (Conventional Commits, semver, agents.md spec, etc.) — link, don't explain.
 - No README duplication. Overview ≤ 3 sentences, not a sales pitch.

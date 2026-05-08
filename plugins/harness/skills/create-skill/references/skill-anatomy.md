@@ -7,14 +7,14 @@ The non-derivable conventions for skill folder shape and frontmatter. Read on ev
 ```
 skill-name/
 ├── SKILL.md              required
-├── rules/                imperative constraints — "you must do X"
-├── workflows/            ordered procedures — "step 1, then 2, then 3"
-├── references/           descriptive material — "X happens because Y"
-├── scripts/              executable code (Python, Bash, etc.)
-└── assets/               output templates, fonts, images
+├── rules/                hard constraints honored on every invocation ("you must do X")
+├── workflows/            ordered procedures where step order matters ("step 1, then 2, then 3")
+├── references/           descriptive material only some invocations need ("X happens because Y")
+├── scripts/              code rewritten across sessions, or where determinism matters
+└── assets/               templates, fonts, images copied into output
 ```
 
-Not every skill needs every directory.
+Not every skill needs every directory. Skip a directory entirely if nothing fits — don't invent content to fill it.
 
 ## SKILL.md frontmatter
 
