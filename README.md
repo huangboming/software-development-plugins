@@ -98,6 +98,10 @@ The [`settings/`](settings) directory holds **standalone reference material**, n
 
 Full authoring conventions live in [CLAUDE.md](CLAUDE.md). The canonical reference for writing skills is [`plugins/harness/skills/create-skill/SKILL.md`](plugins/harness/skills/create-skill/SKILL.md).
 
+## Acknowledgements
+
+- [`define:grill-me`](plugins/define/skills/grill-me/SKILL.md) is adapted verbatim from [mattpocock/skills — productivity/grill-me](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) by Matt Pocock.
+
 ## License
 
 Licensed under the MIT License. See [LICENSE](LICENSE).

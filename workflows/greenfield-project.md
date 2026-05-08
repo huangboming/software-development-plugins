@@ -8,7 +8,7 @@ Use this end-to-end when you're greenfield — no code, no backlog, maybe just a
 |------|-------|---------------------|-------|
 | 1 | Discover | "prepare user research for this idea" → "synthesize the findings" → "frame the problem" | `discover:prepare-user-research`, `discover:synthesize-research`, `discover:frame-problem` |
 | 2 | Discover | "map the opportunity tree" → "test the riskiest assumption" | `discover:map-opportunities`, `discover:test-assumption` |
-| 3 | Define | "define the product" → "write a product vision" → "slice the MVP" → "set success metrics" → "write a PRD for the first release" → "write user stories" | `define:define-product`, `define:define-vision`, `define:slice-mvp`, `define:set-success-metrics`, `define:write-prd`, `define:write-user-story` |
+| 3 | Define | "grill me on the product" → "write product.md" → "grill me on the first feature" → "write a PRD for the first release" | `define:grill-me`, `define:write-product-md`, `define:grill-me`, `define:write-prd` |
 | 4 | Build | "scaffold a new \<stack\> project" | `build:scaffold-project` |
 | 5 | Harness | "set up project CLAUDE.md rules" / "add a skill for \<X\>" | `harness:create-rules`, `harness:create-skill` |
 | 6 | Design | "design the technical spec for \<feature\>" | `design:design-spec` |
@@ -22,6 +22,7 @@ Use this end-to-end when you're greenfield — no code, no backlog, maybe just a
 ## Decision points
 
 - **Skip Discover (steps 1-2)** if the problem is already validated — research was done elsewhere and you have a framed problem ready to commit to.
+- **Skip `grill-me`** within step 3 when scope is already aligned — when the inputs feeding the writer are unambiguous, the writer alone is enough.
 - **Skip step 4 (scaffold)** when starting from a template or extending an existing scaffold.
 - **Skip Harness (step 5)** unless you're actively tuning the project to host AI agents (custom skills, project rules, hooks). Standard greenfield apps rarely need it on the first iteration.
 - **Loop back to Design (step 6)** whenever step 8 quality checks (`guard-test`, `guard-boundary`) reveal architectural mismatch — fix the spec, then re-implement, rather than patching around it.
@@ -34,7 +35,7 @@ Use this end-to-end when you're greenfield — no code, no backlog, maybe just a
 |------|----------------------|
 | 1 | Research plan, raw findings, synthesis notes, framed problem statement |
 | 2 | Opportunity tree, assumption test results |
-| 3 | Product definition, vision doc, MVP slice, success-metrics doc, first-release PRD, user stories |
+| 3 | Shared understanding (transient), product definition, first-release PRD |
 | 4 | Project skeleton (folder layout, dependency manifest, CI/test scaffolding) |
 | 5 | Project `CLAUDE.md`, custom skills/rules under `.claude/` |
 | 6 | Design spec doc |

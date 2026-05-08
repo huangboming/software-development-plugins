@@ -7,7 +7,7 @@ Use this loop for each feature, fix, or chore on an already-live codebase.
 | Step | Phase | Say something like… | Skill |
 |------|-------|---------------------|-------|
 | 1 | Discover | "capture this user signal" (features) / "capture this bug" (defects) → "frame the problem" | `discover:capture-signal`, `build:capture-issue`, `discover:frame-problem` |
-| 2 | Define | "prioritize" → "slice the MVP" → "set success metrics" → "write a PRD for \<feature\>" → "write user stories" | `define:prioritize`, `define:slice-mvp`, `define:set-success-metrics`, `define:write-prd`, `define:write-user-story` |
+| 2 | Define | "grill me on \<feature\>" → "write a PRD for \<feature\>" | `define:grill-me`, `define:write-prd` |
 | 3 | Design | "design the technical approach for \<feature\>" | `design:design-spec` |
 | 4 | — | **Implement the spec** — write the code yourself (or with Claude Code's editing loop); no dedicated skill. | _(no skill)_ |
 | 5 | Build | During implementation, at each phase: "simplify this code" / "guard the tests" / "check for boundary leaks" | `build:simplify-code`, `build:guard-test`, `build:guard-boundary` |
@@ -20,6 +20,7 @@ Use this loop for each feature, fix, or chore on an already-live codebase.
 
 - **Skip Discover (step 1)** when the work is already specified — assigned ticket, agreed scope, no fresh signal to capture or frame.
 - **Skip Define (step 2)** for small bug fixes and chores. The fix itself is the spec.
+- **Skip `grill-me`** within step 2 when scope is already aligned — assigned ticket with clear acceptance, or a conversation you've already had. The writer alone is enough.
 - **Skip Design (step 3)** for trivial changes — typo fixes, copy edits, dependency bumps, refactors that don't cross a boundary.
 - **Start at step 5 (quality)** for pure refactors with no behavior change.
 - **Skip steps 4, 7, 8 (implement/verify/docs)** for docs-only changes — go Discover → Build → Ship.
@@ -31,7 +32,7 @@ Use this loop for each feature, fix, or chore on an already-live codebase.
 | Step | Artifacts left behind |
 |------|----------------------|
 | 1 | Captured signal or issue, framed problem statement |
-| 2 | Prioritization rationale, MVP slice, success metrics, PRD, user stories |
+| 2 | Shared understanding (transient), PRD |
 | 3 | Design spec doc |
 | 4 | Code changes |
 | 5 | Cleaner code, passing tests, no boundary leaks |
