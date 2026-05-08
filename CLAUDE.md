@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-A **Claude Code plugin marketplace** — a collection of 9 plugins (`plan`, `design`, `build`, `verify`, `ship`, `measure`, `docs`, `harness`, `misc`) that guide agents through the software product lifecycle. There is no application code to run; authored artifacts are Markdown skills and agents consumed by Claude Code itself.
+A **Claude Code plugin marketplace** — a collection of 8 plugins (`define`, `design`, `build`, `verify`, `ship`, `docs`, `harness`, `misc`) that guide agents through the software product lifecycle. There is no application code to run; authored artifacts are Markdown skills and agents consumed by Claude Code itself.
 
 ## Repository layout
 

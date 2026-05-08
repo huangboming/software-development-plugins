@@ -1,10 +1,10 @@
 # software-development-plugins
 
-A Claude Code plugin marketplace that guides agents through the full software product lifecycle — define, design, build, verify, ship, measure.
+A Claude Code plugin marketplace that guides agents through the full software product lifecycle — define, design, build, verify, ship.
 
 ## About
 
-This repository is a [Claude Code](https://claude.com/claude-code) **plugin marketplace**: a bundle of ten plugins that each cover one phase of the software product loop. Every plugin ships skills (auto-invoked playbooks) and agents (task-scoped subagents) so a Claude Code session can move from "what should we build?" to "what did shipping teach us?" without leaving the tool.
+This repository is a [Claude Code](https://claude.com/claude-code) **plugin marketplace**: a bundle of eight plugins that each cover one phase of the software product loop. Every plugin ships skills (auto-invoked playbooks) and agents (task-scoped subagents) so a Claude Code session can move from "what should we build?" to "what did shipping teach us?" without leaving the tool.
 
 ### The Plugins
 
@@ -15,11 +15,9 @@ This repository is a [Claude Code](https://claude.com/claude-code) **plugin mark
 | [`build`](plugins/build) | Execution | Turn decisions into working software with version-control hygiene (scaffold, commit, simplify, guard tests/boundaries, create PRs, clean up branches). |
 | [`verify`](plugins/verify) | Quality gate | Check what was built against what should have been built (code review, test strategy, doc review). |
 | [`ship`](plugins/ship) | Release | Package and publish finished changes (tag release, GitHub release, changelog, release notes, README, CI/CD pipelines). |
-| [`measure`](plugins/measure) | Feedback loop | Turn shipped reality into signals that shape the next cycle. |
 | [`docs`](plugins/docs) | Documentation | Generate developer- and stakeholder-facing docs (API docs, architecture docs). |
 | [`harness`](plugins/harness) | Agent tuning | Tune the project itself to host AI agents well (skills, subagents, hooks, rules, design system docs). |
-| [`misc`](plugins/misc) | Utilities | Miscellaneous helpers that don't belong to a single phase (e.g. git activity summaries). |
-| [`research`](plugins/research) | Utilities | A research-analyst subagent that finds high-quality primary and secondary sources. |
+| [`misc`](plugins/misc) | Utilities | Miscellaneous helpers that don't belong to a single phase (git activity summaries, source-finding researcher agent). |
 
 ## Quick Start
 
@@ -39,9 +37,7 @@ claude plugin install define@software-development-plugins
 claude plugin install design@software-development-plugins
 claude plugin install docs@software-development-plugins
 claude plugin install harness@software-development-plugins
-claude plugin install measure@software-development-plugins
 claude plugin install misc@software-development-plugins
-claude plugin install research@software-development-plugins
 claude plugin install ship@software-development-plugins
 claude plugin install verify@software-development-plugins
 ```
@@ -52,7 +48,7 @@ Or install within a Claude Code session:
 /plugin marketplace add huangboming/software-development-plugins
 /plugin install define@software-development-plugins
 /plugin install build@software-development-plugins
-/plugin install research@software-development-plugins
+/plugin install misc@software-development-plugins
 # …or any subset you need
 ```
 
@@ -61,13 +57,6 @@ See the [Claude Code plugin docs](https://docs.claude.com/en/docs/claude-code) f
 ### Usage
 
 Once a plugin is installed, Claude Code auto-invokes its skills from the natural-language triggers declared in each `SKILL.md` — you rarely need to call a skill by name. Agents are invoked via the `Task` tool (or by skills that delegate to them), e.g. `ship:write-readme` delegates to the `readme-writer` agent.
-
-End-to-end workflows live in [`workflows/`](workflows/):
-
-- [Greenfield project](workflows/greenfield-project.md) — idea to first GitHub release.
-- [Existing project](workflows/existing-project.md) — feature, fix, or chore on a live codebase.
-
-Each workflow lists the skill sequence, decision points (when to skip a step or loop back), and artifacts produced. These are menus, not pipelines — skip what doesn't apply, and invoke skills out of order whenever the work demands it.
 
 ## Settings
 

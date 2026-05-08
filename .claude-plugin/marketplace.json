@@ -1,6 +1,6 @@
 {
     "name": "software-development-plugins",
-    "description": "Plugins that guide agents through the full software product lifecycle — define, design, build, verify, ship, and measure",
+    "description": "Plugins that guide agents through the full software product lifecycle — define, design, build, verify, and ship",
     "owner": {
         "name": "Boming Huang"
     },
@@ -26,10 +26,6 @@
             "source": "./plugins/ship"
         },
         {
-            "name": "measure",
-            "source": "./plugins/measure"
-        },
-        {
             "name": "docs",
             "source": "./plugins/docs"
         },
@@ -40,10 +36,6 @@
         {
             "name": "misc",
             "source": "./plugins/misc"
-        },
-        {
-            "name": "research",
-            "source": "./plugins/research"
         }
     ]
 }

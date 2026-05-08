@@ -1,7 +1,7 @@
 {
     "name": "misc",
-    "version": "0.1.1",
-    "description": "Miscellaneous utilities that don't fit into a specific phase of the software development lifecycle.",
+    "version": "0.2.0",
+    "description": "Miscellaneous utilities that don't fit into a specific phase of the software development lifecycle (git activity summaries, source-finding researcher agent).",
     "author": {
         "name": "Boming Huang"
     }
