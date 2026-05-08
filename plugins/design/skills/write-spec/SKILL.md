@@ -15,7 +15,3 @@ description: "Write a design-focused technical spec for a backend, frontend, or 
 
 - **Design-first, code-light.** Shapes in tables (no DDL), architecture in `flowchart`, behavior in `sequenceDiagram` / `stateDiagram-v2` when non-trivial. Code snippets ≤10 lines, only when shape is otherwise ambiguous.
 - **Skip sections that don't apply.** Every section after Context is conditional. Mark `N/A — reason` only when a reviewer might expect the section and you intentionally skipped it.
-
-## Bundled resources
-
-- [`assets/template-spec.md`](assets/template-spec.md) — the artifact scaffold with conditional sections. **Use at Step 3.**
