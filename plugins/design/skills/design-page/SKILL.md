@@ -74,7 +74,6 @@ After delivery, route the user to the right next-step skill based on what they w
 | Spec a feature's backend/frontend architecture | `design:design-spec` |
 | Design the website's structure/IA (usually upstream) | `design:design-website` |
 | Scaffold the implementation | `build:scaffold-project` |
-| Capture additional product signals from this design | `discover:capture-signal` |
 
 ## Edge cases & gotchas
 

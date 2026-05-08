@@ -46,7 +46,7 @@
 | tech-debt | A known shortcut or deprecation that has to be paid down — outdated dependency, missing tests, deferred migration |
 | perf-internal | Internal performance problem that is not yet felt by users — slow CI, slow local build, slow background job, memory growth in a worker |
 
-User-facing performance problems (slow page loads, laggy UI, timeouts users see) are product signals — route to `capture-signal` in the `discover` plugin.
+User-facing performance problems (slow page loads, laggy UI, timeouts users see) are product signals — out of scope for this skill.
 
 ### Severity (bugs only)
 

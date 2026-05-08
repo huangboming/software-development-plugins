@@ -1,13 +1,13 @@
 ---
 name: capture-issue
-description: "Capture an engineering issue — bug, refactor, tech-debt item, or internal performance problem — and write it to .product/build/issues/. Not for feature ideas, user observations, or user-facing perf problems (use capture-signal). Triggers: 'capture a bug', 'file a bug', 'report a bug', 'I found a bug', 'log tech debt', 'mark this as tech debt', 'track this refactor', 'this needs a refactor', 'log an internal perf problem', 'CI is slow', 'triage this bug', '/capture-issue'."
+description: "Capture an engineering issue — bug, refactor, tech-debt item, or internal performance problem — and write it to .product/build/issues/. Not for feature ideas, user observations, or user-facing perf problems. Triggers: 'capture a bug', 'file a bug', 'report a bug', 'I found a bug', 'log tech debt', 'mark this as tech debt', 'track this refactor', 'this needs a refactor', 'log an internal perf problem', 'CI is slow', 'triage this bug', '/capture-issue'."
 ---
 
 # Capture Issue
 
 Capture an engineering issue and write it to `.product/build/issues/<slug>.md`, then update the rolling list at `.product/build/issues/issues.md` so it is discoverable.
 
-Scope is engineering work: **bugs, refactor items, tech-debt items, and internal performance problems**. User-facing performance problems and feature ideas go to `capture-signal` in the `discover` plugin — route those out rather than capturing them here.
+Scope is engineering work: **bugs, refactor items, tech-debt items, and internal performance problems**. User-facing performance problems and feature ideas are out of scope — surface them to the user as such rather than capturing them here.
 
 ## References
 
@@ -23,7 +23,7 @@ Four steps: categorize, elicit, write, confirm.
 
 Read [triage-guide.md](references/triage-guide.md) and classify the input as `bug`, `refactor`, `tech-debt`, or `perf-internal`.
 
-If the input is a user-facing problem or a feature idea, stop and route the user to `capture-signal` in `discover` — do not capture it here. Surface the routing decision explicitly.
+If the input is a user-facing problem or a feature idea, stop and tell the user it is out of scope for this skill — do not capture it here. Surface the decision explicitly.
 
 For batch inputs (multiple issues at once), categorize each individually and process each through steps 2–4.
 
@@ -94,11 +94,11 @@ If the user describes a **solution instead of a problem** ("we need to add a cac
   → Ask what the underlying problem is. Capture the problem in Summary and Details; put the proposed solution in Raw Notes.
 
 If the user provides a **mix of engineering issues and product signals**:
-  → Capture engineering items here. Route signals and feature ideas to `capture-signal` in `discover`. Surface the split explicitly so the user sees which items went where.
+  → Capture engineering items here. Surface the product signals and feature ideas back to the user as out of scope. Make the split explicit so the user sees which items went where.
 
 For other cases (not-reproducible bugs, "just capture it" requests, resolved-issue regressions, slug collisions, semantic dedup), see `triage-guide.md` and `issue-template.md`.
 
 ## Gotchas
 
-- **User-facing perf is a signal, not an issue** — if users feel the slowness, route to `capture-signal`. `perf-internal` covers only team-felt problems: CI, build, background jobs, worker memory.
+- **User-facing perf is a signal, not an issue** — if users feel the slowness, surface it as a product signal (out of scope here). `perf-internal` covers only team-felt problems: CI, build, background jobs, worker memory.
 - **Solutions disguised as issues** — "refactor to use strategy pattern" is a solution; the problem is whatever pain the current shape causes. Capture the pain; put the proposed fix in Raw Notes.

@@ -11,7 +11,7 @@ If alignment is shaky, run `grill-me` first using the template below as the deci
 
 ## Process
 
-1. **Locate the file.** Target is `.product/define/specs/<feature-name>/v<N>.md`. New feature → `v1.md`. Significant revision → next version with a `Supersedes:` link. Otherwise edit in place. Read prior versions and any framed opportunity in `.product/discover/opportunities/`; flag inconsistencies with the inputs you were given.
+1. **Locate the file.** Target is `.product/define/specs/<feature-name>/v<N>.md`. New feature → `v1.md`. Significant revision → next version with a `Supersedes:` link. Otherwise edit in place. Read prior versions; flag inconsistencies with the inputs you were given.
 2. **Draft against the template** using the aligned context (typically from a prior `grill-me` session). If inputs are insufficient, stop and run `grill-me`. Do not invent. Set `Last updated` to today.
 3. **Review against the quality bar; revise; present.**
 

@@ -14,7 +14,6 @@ Look for, in this order:
 | Design system | `.product/design-system/*` or user-named path | Component composition, tokens (do not redefine) |
 | PRD / feature spec | `.product/define/specs/<feature>/v<N>.md` | Functional scope, success metrics |
 | User stories | `.product/define/stories/<feature>/*.md` | Specific user-observable behaviors the page must support |
-| Opportunity brief | `.product/discover/opportunities/<slug>.md` | Who / Pain / What Good Looks Like (if the page is opportunity-driven) |
 
 When found, summarize back to the user in 3-5 lines what you're treating as fixed input from each artifact. Let them correct the summary before proceeding.
 

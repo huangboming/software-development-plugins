@@ -1,6 +1,6 @@
 # software-development-plugins
 
-A Claude Code plugin marketplace that guides agents through the full software product lifecycle — discover, define, design, build, verify, ship, measure.
+A Claude Code plugin marketplace that guides agents through the full software product lifecycle — define, design, build, verify, ship, measure.
 
 ## About
 
@@ -10,8 +10,7 @@ This repository is a [Claude Code](https://claude.com/claude-code) **plugin mark
 
 | Plugin | Phase | What it covers |
 |--------|-------|----------------|
-| [`discover`](plugins/discover) | Discovery | Turn raw signals into framed opportunities (capture-signal, user-research prep, synthesis, problem framing, opportunity mapping, assumption tests, competitor teardowns). |
-| [`define`](plugins/define) | Definition | Turn framed opportunities into committable specs (vision, prioritization, MVP slicing, success metrics, PRDs, user stories). |
+| [`define`](plugins/define) | Definition | Turn product intent into committable specs (vision, prioritization, MVP slicing, success metrics, PRDs, user stories). |
 | [`design`](plugins/design) | Technical design | Resolve product intent into a concrete technical approach grounded in the existing codebase (design specs, spec review, code exploration). |
 | [`build`](plugins/build) | Execution | Turn decisions into working software with version-control hygiene (scaffold, commit, simplify, guard tests/boundaries, create PRs, clean up branches). |
 | [`verify`](plugins/verify) | Quality gate | Check what was built against what should have been built (code review, test strategy, doc review). |
@@ -20,6 +19,7 @@ This repository is a [Claude Code](https://claude.com/claude-code) **plugin mark
 | [`docs`](plugins/docs) | Documentation | Generate developer- and stakeholder-facing docs (API docs, architecture docs). |
 | [`harness`](plugins/harness) | Agent tuning | Tune the project itself to host AI agents well (skills, subagents, hooks, rules, design system docs). |
 | [`misc`](plugins/misc) | Utilities | Miscellaneous helpers that don't belong to a single phase (e.g. git activity summaries). |
+| [`research`](plugins/research) | Utilities | A research-analyst subagent that finds high-quality primary and secondary sources. |
 
 ## Quick Start
 
@@ -37,11 +37,11 @@ claude plugin marketplace add huangboming/software-development-plugins --scope p
 claude plugin install build@software-development-plugins
 claude plugin install define@software-development-plugins
 claude plugin install design@software-development-plugins
-claude plugin install discover@software-development-plugins
 claude plugin install docs@software-development-plugins
 claude plugin install harness@software-development-plugins
 claude plugin install measure@software-development-plugins
 claude plugin install misc@software-development-plugins
+claude plugin install research@software-development-plugins
 claude plugin install ship@software-development-plugins
 claude plugin install verify@software-development-plugins
 ```
@@ -50,9 +50,9 @@ Or install within a Claude Code session:
 
 ```text
 /plugin marketplace add huangboming/software-development-plugins
-/plugin install discover@software-development-plugins
 /plugin install define@software-development-plugins
 /plugin install build@software-development-plugins
+/plugin install research@software-development-plugins
 # …or any subset you need
 ```
 

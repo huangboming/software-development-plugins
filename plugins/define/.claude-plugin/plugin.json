@@ -1,6 +1,6 @@
 {
     "name": "define",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Write product.md and feature-level PRDs, and stress-test plans through relentless interviewing — pure-emitter writers plus an alignment skill, the artifacts and conversations every later phase executes against.",
     "author": {
         "name": "Boming Huang"

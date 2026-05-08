@@ -4,7 +4,6 @@
 **Author / Owner:** <name>
 **Status:** Draft | In Review | Approved
 **Related artifacts:**
-- Opportunity: `<.product/discover/opportunities/<slug>.md or N/A>`
 - PRD / Spec: `<.product/define/specs/<feature>/v<N>.md or N/A>`
 - Design system: `<.product/design-system/... or N/A>`
 

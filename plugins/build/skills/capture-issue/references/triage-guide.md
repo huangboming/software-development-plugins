@@ -12,11 +12,11 @@ The category drives what information to gather. Infer from the user's input firs
 | "this code is a mess", "hard to change", "duplicated", "god class", "tangled" | refactor |
 | "deprecated", "outdated", "we skipped", "should have migrated", "missing tests" | tech-debt |
 | "slow", "takes too long", "timeout", "memory grows" + internal context (CI, build, worker, job) | perf-internal |
-| "slow", "laggy" + user-facing context (page load, UI, API response user sees) | **not this skill** — route to `capture-signal` in `discover` |
+| "slow", "laggy" + user-facing context (page load, UI, API response user sees) | **not this skill** — out of scope (this is a product signal, not an engineering issue) |
 
 If the boundary is genuinely unclear (e.g., a slow endpoint that may or may not be user-visible), ask one question: "Is this felt by users, or only by the team?"
 
-If the answer is still ambiguous ("both", "possibly"), default to `perf-internal` and note in Raw Notes that user-facing impact is uncertain. Route to `capture-signal` only if the user explicitly confirms users experience it.
+If the answer is still ambiguous ("both", "possibly"), default to `perf-internal` and note in Raw Notes that user-facing impact is uncertain. If the user explicitly confirms users experience it, the item is out of scope for this skill — surface that and stop.
 
 ## Elicitation Questions
 

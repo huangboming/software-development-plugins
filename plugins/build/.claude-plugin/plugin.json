@@ -1,6 +1,6 @@
 {
     "name": "build",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Turn decisions into working software — the execution phase where specs become code with the version-control hygiene and code-quality discipline that every later phase depends on.",
     "author": {
         "name": "Boming Huang"
