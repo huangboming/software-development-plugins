@@ -1,7 +1,7 @@
 {
     "name": "design",
-    "version": "0.2.1",
-    "description": "Decide how to build it — resolve product intent into a concrete technical approach grounded in the realities of the existing codebase, before any code is written.",
+    "version": "0.3.0",
+    "description": "Write design artifacts — sitemaps and feature tech specs.",
     "author": {
         "name": "Boming Huang"
     }
