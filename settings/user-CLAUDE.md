@@ -2,51 +2,37 @@
 
 ## Thinking Philosophy
 
-- Think as an Essentialist & Minimalist.
-  - Always think "is this neccessary?". Don't introduce unneccessary ideas/design/features into the project.
-- Think really hard instead of trying to work arount it.
-- Start with the big picture, the architecture, and the ultimate user goal before considering implementation details.
-- Use system thinking. View the codebase as a living, interconnected system. Recognize that isolated elements do not exist; a change in one place will inevitably impact others.
+- Think as an Essentialist & Minimalist. Think hard instead of working around.
+- Start with the big picture, architecture, and ultimate user goal before implementation details.
+- Use system thinking. The codebase is an interconnected system — local changes have global effects.
 
-## My Preferences
+## Communication
 
-### Communication
+- Search codebases and real-world data over relying on training data. Cross-reference multiple sources and provide verifiable references.
+- Offer actionable choices, not open-ended questions: list options, outline trade-offs, recommend one. Ask one question at a time.
 
-- Prefer searching over relying on training data, prefer real-world codebases/data over assumptions. Cross-reference multiple sources for non-trivial topics and provide references so I can verify them.
-- Prefer actionable choices over open-ended questions. Provide a list of options, outline the trade-offs of each, and state your recommendation. Ask questions one at a time, waiting for my feedback before proceeding.
+## Alignment
 
-## Pre-Execution
+Reaching shared understanding is the highest priority before any action.
 
-### Alignment
-
-Reaching a shared understanding is the absolute highest priority before taking any action.
 - NEVER make assumptions about my intent. When requirements or designs are ambiguous, pause and ask. When a request could be interpreted in multiple ways, present the different interpretations and ask which one is intended.
-- NEVER make assumptions about the codebase. Explore real-world code or data when you need, then share your findings and analysis with me to ensure our understandings are completely aligned.
-- When multiple architectural paths exist, outline the top 2-3 options. Compare their trade-offs and recommend the most sound approach.
-
-### Planning
-
-- Break large requirements into smaller, well-defined logical sub-problems before designing the implementation.
-- Map out module dependencies and proactively identify edge cases and potential failure modes during the design phase, not as an afterthought.
+- NEVER make assumptions about the codebase. Share your findings and analysis to ensure our understandings are completely aligned.
+- When multiple architectural paths exist, outline the top 2-3 options.
 
 ## Execution
 
-### Philosophy
-
-- Read and understand existing code and context before proposing changes
+- Break large requirements into smaller, well-defined sub-problems before designing the implementation.
+- Map out module dependencies and proactively identify edge cases and potential failure modes during the design phase, not as an afterthought.
+- Read and understand existing code and context before proposing changes.
 - Simplicity First. Prefer the simplest solution that correctly solves the problem. Make the smallest change that correctly addresses the requirement. Constantly evaluate the blast radius. Avoid over-engineering.
-- Always verify. Verify that changes actually work before declaring a task complete
-
-Always condsider system architecture and code architecture:
-- Design by contract. Focus on the interfaces and APIs between modules before implementing the internals. Ensure inputs, outputs, and side effects are clearly defined and isolated.
+- Always verify changes work before declaring a task complete.
+- Design by contract. Define interfaces and APIs before internals — inputs, outputs, and side effects must be explicit and isolated.
 - Respect architectural boundaries. Maintain strict separation of concerns. Do not bypass established layers just for a quick fix. Keep the data flow predictable and unidirectional where applicable.
-- Aim for modules that do one thing well (cohesion) and rely on as few other modules as possible (coupling).
-- Be deliberate about state management. Clearly define a single source of truth for data and ensure the data flow is unidirectional and predictable across the architecture. Keep state as localized and immutable as possible. Prefer pure functions for data transformations to reduce unpredictable side effects across the system.
-
-Consider business carefully:
-- Code structure should reflect the business domain, not just technical layers
-- Keep the core business rules pure and isolated. Decouple them from infrastructure, framework specifics, and external APIs using clear boundaries
-- Class, function, and variable names must strictly use the terminology of the business domain. Avoid generic technical terms when a precise business term exists.
+- Aim for high cohesion and low coupling. Modules should do one thing well.
+- Be deliberate about state management. Define a single source of truth. Keep state localized and immutable. Prefer pure functions for data transformations.
+- Code structure should reflect the business domain, not just technical layers.
+- Keep the core business rules pure and isolated. Decouple them from infrastructure, framework specifics, and external APIs using clear boundaries.
+- Class, function, and variable names must use business domain terminology. Avoid generic terms when a precise business term exists.
 
 ## Tooling Stack
 
@@ -57,9 +43,9 @@ Consider business carefully:
   - directory structure: Prefer `eza --tree -L <level> --git` over `tree` or `ls`. It provides a clean tree view, respects .gitignore by default, and integrates file-level Git status
   - file search: prefer `fd` over `find`
   - content search: prefer `rg` (ripgrep) over `grep`
-  - AST/structural search: prefer Prefer `ast-grep` (`sg`) over `sed` or raw regex for complex code refactoring and structural searching.
+  - AST/structural search: Prefer `ast-grep` (`sg`) over `sed` or raw regex for complex code refactoring and structural searching.
   - read content: prefer `bat --pager=never --style=numbers` over `cat` for reading files
-    - For large files, NEVER read the whole file at once. Use `-r` or `--line-range <start>:<end>` to read specific chunks
+    - For large files, NEVER read the whole file at once. Use `--line-range <start>:<end>` to read specific chunks
 - Data Parsing:
   - use `jq` to parse, filter, and extract data from JSON files or API responses
   - use `yq` for querying and manipulating YAML files
