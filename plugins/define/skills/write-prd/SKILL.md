@@ -3,8 +3,6 @@ name: write-prd
 description: "Write feature-level PRDs — one per capability, versioned. For alignment first, use grill-me. For product-wide definition, use write-product-md. Triggers: '/write-prd', 'write a PRD', 'write a feature PRD', 'spec out this feature', 'I need a PRD for...', 'document requirements from code'."
 ---
 
-# PRD Writer
-
 Write feature-level PRDs at `.product/define/specs/<feature-name>/v<N>.md` — one per capability, versioned. For product-wide definition, use `write-product-md`.
 
 If alignment is shaky, run `grill-me` first using the template below as the decision tree.

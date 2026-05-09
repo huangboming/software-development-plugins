@@ -3,8 +3,6 @@ name: guard-boundary
 description: "Guard encapsulation boundaries against the Parnas (information hiding) and Ousterhout (interface depth) tests. Triggers: 'guard boundary', 'check encapsulation', 'find leaked internals', 'check module boundaries', 'is my code well encapsulated'."
 ---
 
-# Guard Boundary
-
 Audit boundaries (modules, classes, functions, cross-module imports) in the user's scope (default: `git diff --name-only HEAD` + staged). Skip generated/vendored/test files.
 
 ## Two essential principles

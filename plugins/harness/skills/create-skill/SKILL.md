@@ -3,8 +3,6 @@ name: create-skill
 description: "Create or update a Claude Code skill. Triggers: 'create a skill', 'write a skill', 'add a skill for...', 'turn this into a skill', '/create-skill'."
 ---
 
-# Skill Creator
-
 Before starting, read `references/skill-anatomy.md` (folder shape, frontmatter contract, loading model). Skip any step below that manifestly doesn't apply (e.g., iterating on an existing skill).
 
 ## Principles
@@ -34,8 +32,6 @@ mkdir -p path/to/<skill-name> && cat > path/to/<skill-name>/SKILL.md <<'EOF'
 name: <skill-name>
 description: "TODO — one paragraph covering (1) what the skill does and (2) specific trigger phrases or contexts that should activate it; this is the routing signal, not a summary"
 ---
-
-# <Skill Title>
 
 [TODO: 1-2 sentences on what this skill enables.]
 

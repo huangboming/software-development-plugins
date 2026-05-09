@@ -3,8 +3,6 @@ name: write-architecture
 description: "Create or update architecture documentation at system level or component level. System scope covers the whole codebase (backend or frontend); component scope covers a specific bounded context's internals. Triggers: 'document the architecture', 'architecture overview', 'create/update arch docs', 'arch docs are outdated', 'how does the system work', 'document this component', 'component architecture'."
 ---
 
-# Write Architecture
-
 ## Process Overview
 
 1. Determine **scope** (system or component), **domain** (backend or frontend, system scope only), and **workflow** (init or update)

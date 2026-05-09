@@ -3,8 +3,6 @@ name: write-release-note
 description: "Write user-facing release notes or summarize what shipped. Triggers: 'write release notes', 'what shipped', 'summarize changes for users', 'release summary', '/write-release-note'."
 ---
 
-# Write Release Note
-
 Audience is **end users**, not developers. `git log` is dev-side noise — every entry must be translated into what a user can now do, avoid, or expect.
 
 ## Workflow

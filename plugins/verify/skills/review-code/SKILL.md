@@ -3,8 +3,6 @@ name: review-code
 description: "Review, audit, or evaluate backend code. Triggers: 'review code', 'review architecture', 'review logic', 'review maintainability', 'review tests', 'security audit', 'find code smells', 'check test coverage', 'check backward compatibility'."
 ---
 
-# Review Code
-
 ## Arguments
 
 Parse from the user's request:

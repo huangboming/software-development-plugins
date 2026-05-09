@@ -3,8 +3,6 @@ name: create-hook
 description: "Create Claude Code hooks (lifecycle event handlers in `.claude/settings.json` or plugin `hooks/hooks.json`). Triggers: 'create a hook', 'add a hook for...', 'set up a PreToolUse/PostToolUse/Stop/SessionStart hook', '/create-hook'."
 ---
 
-# Hook Creator
-
 Produce two artifacts: a JSON config entry and a script the event invokes.
 
 ## Process

@@ -14,6 +14,7 @@ A Claude Code plugin marketplace. Eight plugins (`define`, `design`, `build`, `v
 
 - Skills live at `plugins/<plugin>/skills/<skill-name>/SKILL.md`. Agents at `plugins/<plugin>/agents/<agent>.md`.
 - A skill's `description` frontmatter is the auto-invocation signal — list concrete trigger phrases users would actually say.
+- No H1 title in `SKILL.md`. The `name` frontmatter already identifies the skill — a `# Title` line right after frontmatter is duplicate ceremony. Start the body with prose or the first `##` section.
 - Naming: `write-*` for generators, `guard-*` / `review-*` for quality checks, concrete verbs (`create-*`, `tag-*`, `cleanup-*`) for operations.
 - Canonical reference for authoring skills: [`plugins/harness/skills/create-skill/SKILL.md`](plugins/harness/skills/create-skill/SKILL.md).
 

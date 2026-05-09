@@ -3,8 +3,6 @@ name: write-product-md
 description: "Write or update .product/define/product.md, the present-tense definition of what the product is today. For alignment first, use grill-me. Triggers: '/write-product-md', 'write product.md', 'write the product definition', 'create product.md', 'update product.md'."
 ---
 
-# Product Definition Writer
-
 Write or update `.product/define/product.md` — the present-tense, concrete definition of what the product is today. No feature list — features live in PRDs.
 
 If alignment is shaky, run `grill-me` first using the template below as the decision tree.

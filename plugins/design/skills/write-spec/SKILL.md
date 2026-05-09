@@ -3,8 +3,6 @@ name: write-spec
 description: "Write a design-focused technical spec for a backend, frontend, or full-stack feature at .product/design/specs/<slug>.md. Mermaid diagrams (architecture, sequence, ER, state) and tables for shapes. Triggers: '/write-spec', 'write a tech spec', 'write a design spec', 'spec out [feature]', 'design the architecture for [feature]'."
 ---
 
-# Write Spec
-
 ## Process
 
 1. **Classify scope** — backend, frontend, or full-stack. State it in one line.

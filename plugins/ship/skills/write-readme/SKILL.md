@@ -3,8 +3,6 @@ name: write-readme
 description: "Write, generate, or update a README for a project or library. Triggers: 'write a README', 'create a README', 'generate a README', 'update the README', 'document this project', '/write-readme'."
 ---
 
-# README Writer
-
 A README is for **users**, not maintainers. Front-load what they need to act; link out for everything else.
 
 ## Type — pick before drafting

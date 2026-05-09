@@ -3,8 +3,6 @@ name: write-sitemap
 description: "Write a sitemap artifact at .product/design/sitemap.md covering page inventory, sitemap diagram (mermaid), and edge pages. Pages only — no JTBDs, business outcomes, or design principles. Triggers: '/write-sitemap', 'create a sitemap', 'list the pages', 'page inventory for [product]', 'site structure'. Hand off feature tech specs to design:write-spec, visual tokens to harness:write-design-system."
 ---
 
-# Write Sitemap
-
 ## Process
 
 1. **List the pages** — every page the site has, with URL and one-line purpose. Include edge pages (404, auth, legal) explicitly.

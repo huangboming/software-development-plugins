@@ -3,8 +3,6 @@ name: write-api
 description: "Create or update API documentation that defines the system's external boundary — what consumers need to integrate. Produces an overview plus per-API detail docs. Triggers: 'document the API', 'API docs', 'API reference', 'what APIs exist', 'endpoint documentation'."
 ---
 
-# Write API
-
 Document the system's external API boundary: what the system exposes to outside consumers and what contracts they must follow.
 
 ## Output Structure

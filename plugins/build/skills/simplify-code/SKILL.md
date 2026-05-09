@@ -3,8 +3,6 @@ name: simplify-code
 description: "Simplify code in a user-specified scope. Triggers: 'simplify this code', 'clean up this module', 'reduce complexity', 'remove dead code', 'clean up this file'."
 ---
 
-# Simplify Code
-
 Simplify code in the user's scope (default: `git diff --name-only HEAD` + staged). If scope is unclear, ask.
 
 ## Two essential rules

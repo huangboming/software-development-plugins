@@ -3,8 +3,6 @@ name: summarize-git
 description: Generate a daily, weekly, or monthly git activity summary across one or more repos. Produces a markdown file with commit details, narrative synthesis, and lines-of-code stats. Use when the user asks for a "daily summary", "weekly summary", "monthly summary", "monthly report", "what did I do today/this week/this month", "git summary", or any request to summarize their work over a period. Triggers on /summarize-git.
 ---
 
-# Git Summary
-
 Generate a markdown summary of the user's git activity for a given period (daily, weekly, or monthly), across one or more repos.
 
 ## Workflow

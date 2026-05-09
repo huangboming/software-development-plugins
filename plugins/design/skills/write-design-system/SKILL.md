@@ -3,8 +3,6 @@ name: write-design-system
 description: "Create `DESIGN.md` — design tokens, component recipes, do's and don'ts. Triggers: 'design system', 'design tokens', 'color palette', 'typography scale', 'visual style'."
 ---
 
-# Write Design System
-
 ## Process
 
 1. **Halt if `DESIGN.md` exists at the project root.** Tell the user: "DESIGN.md already exists. Edit it directly, or delete it to regenerate."
