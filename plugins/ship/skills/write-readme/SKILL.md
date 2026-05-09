@@ -7,14 +7,14 @@ A README is for **users**, not maintainers. Front-load what they need to act; li
 
 ## Type — pick before drafting
 
-- **Project** (deployed app, service, CLI): What it does → screenshot/demo → install → run → configure.
-- **Library** (installed as dependency): Tagline → install → minimal example → API summary → links.
-- **Monorepo:** project-style root, library-style per package. If ambiguous, ask.
+- **Project** (deployed app, service, CLI) → fill [`references/project-readme-template.md`](references/project-readme-template.md). Flow: what it does → screenshot/demo → install → run → configure.
+- **Library** (installed as a dependency) → fill [`references/library-readme-template.md`](references/library-readme-template.md). Flow: tagline → install → minimal example → API summary → links.
+- **Monorepo:** project template at root, library template per package. If ambiguous, ask.
 
 ## Workflow
 
-1. If `README.md` exists and is non-trivial (≥20 lines), **update** — preserve voice, structure, and ordering; edit in place.
-2. Otherwise **generate** from the codebase: manifests, entry points, scripts, public API surface.
+1. If `README.md` exists and is non-trivial (≥20 lines), **update** — preserve voice, structure, and ordering; edit in place. Use the matching template only as a gap-check.
+2. Otherwise **generate** from the codebase (manifests, entry points, scripts, public API surface) into the matching template.
 3. Verify every command and path you write actually exists.
 
 ## Hard rules

@@ -12,7 +12,7 @@ Audience is **end users**, not developers. `git log` is dev-side noise — every
 3. **Drop** refactors, test-only, doc-only, and internal-tooling changes unless user-visible.
 4. Translate each surviving change to user-benefit language ("Faster cold starts on first request" not "Cache the bootstrap module").
 5. Pick the **top 3-5 highlights** — the changes most likely to matter to end users.
-6. Write to `docs/release-notes/v<version>.md`: 1-2 sentence overview, highlights, then remaining changes grouped by product area (or category if <5 entries).
+6. Fill [`references/release-notes-template.md`](references/release-notes-template.md) and write to `docs/release-notes/v<version>.md`.
 7. For every breaking change, include a migration note. Don't downplay them.
 
 ## Hard rules
