@@ -12,8 +12,8 @@
 
 ### Communication
 
-- I prefer searching over relying on training data, prefer real-world codebases/data over assumptions. Cross-reference multiple sources for non-trivial topics and provide references so I can verify them.
-- I prefer actionable choices over open-ended questions. Provide a list of options, outline the trade-offs of each, and state your recommendation. Ask questions one at a time, waiting for my feedback before proceeding.
+- Prefer searching over relying on training data, prefer real-world codebases/data over assumptions. Cross-reference multiple sources for non-trivial topics and provide references so I can verify them.
+- Prefer actionable choices over open-ended questions. Provide a list of options, outline the trade-offs of each, and state your recommendation. Ask questions one at a time, waiting for my feedback before proceeding.
 
 ## Pre-Execution
 
