@@ -1,10 +1,10 @@
 # software-development-plugins
 
-A Claude Code plugin marketplace that guides agents through the full software product lifecycle — define, design, build, verify, ship.
+A Claude Code plugin marketplace that guides agents through the full software product lifecycle — define, design, build, ship.
 
 ## About
 
-This repository is a [Claude Code](https://claude.com/claude-code) **plugin marketplace**: a bundle of eight plugins that each cover one phase of the software product loop. Every plugin ships skills (auto-invoked playbooks) and agents (task-scoped subagents) so a Claude Code session can move from "what should we build?" to "what did shipping teach us?" without leaving the tool.
+This repository is a [Claude Code](https://claude.com/claude-code) **plugin marketplace**: a bundle of seven plugins that each cover one phase of the software product loop. Every plugin ships skills (auto-invoked playbooks) and agents (task-scoped subagents) so a Claude Code session can move from "what should we build?" to "what did shipping teach us?" without leaving the tool.
 
 ### The Plugins
 
@@ -13,7 +13,6 @@ This repository is a [Claude Code](https://claude.com/claude-code) **plugin mark
 | [`define`](plugins/define) | Definition | Turn product intent into committable specs (vision, prioritization, MVP slicing, success metrics, PRDs, user stories). |
 | [`design`](plugins/design) | Technical design | Resolve product intent into a concrete technical approach grounded in the existing codebase (design specs, spec review, code exploration). |
 | [`build`](plugins/build) | Execution | Turn decisions into working software with version-control hygiene (scaffold, commit, simplify, guard tests/boundaries, create PRs, clean up branches). |
-| [`verify`](plugins/verify) | Quality gate | Check what was built against what should have been built (code review, test strategy, doc review). |
 | [`ship`](plugins/ship) | Release | Package and publish finished changes (tag release, GitHub release, changelog, release notes, README, CI/CD pipelines). |
 | [`docs`](plugins/docs) | Documentation | Generate developer- and stakeholder-facing docs (API docs, architecture docs). |
 | [`harness`](plugins/harness) | Agent tuning | Tune the project itself to host AI agents well (skills, subagents, hooks, rules, design system docs). |
@@ -39,7 +38,6 @@ claude plugin install docs@software-development-plugins
 claude plugin install harness@software-development-plugins
 claude plugin install misc@software-development-plugins
 claude plugin install ship@software-development-plugins
-claude plugin install verify@software-development-plugins
 ```
 
 Or install within a Claude Code session:

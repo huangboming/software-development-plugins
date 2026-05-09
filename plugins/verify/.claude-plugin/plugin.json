@@ -1,8 +1,0 @@
-{
-    "name": "verify",
-    "version": "0.1.0",
-    "description": "Catch defects and drift before users do — the quality gate between writing code and shipping it, where what was built is checked against what should have been built.",
-    "author": {
-        "name": "Boming Huang"
-    }
-}
