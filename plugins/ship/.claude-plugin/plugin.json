@@ -1,6 +1,6 @@
 {
     "name": "ship",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Cross the boundary from internal work to external value — package and publish finished changes so users, operators, and automation can actually consume them.",
     "author": {
         "name": "Boming Huang"

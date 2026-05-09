@@ -5,57 +5,22 @@ description: "Write, generate, or update a README for a project or library. Trig
 
 # README Writer
 
-## References
+A README is for **users**, not maintainers. Front-load what they need to act; link out for everything else.
 
-### Workflows
+## Type — pick before drafting
 
-- [references/workflows/generate-readme.md](references/workflows/generate-readme.md) — Step-by-step process for creating a README from scratch. Read when the project has no README or the user wants to create one.
-- [references/workflows/update-readme.md](references/workflows/update-readme.md) — Process for refreshing an existing README against the codebase. Read when the user wants to update or improve an existing README.
+- **Project** (deployed app, service, CLI): What it does → screenshot/demo → install → run → configure.
+- **Library** (installed as dependency): Tagline → install → minimal example → API summary → links.
+- **Monorepo:** project-style root, library-style per package. If ambiguous, ask.
 
-### Templates and Guides
+## Workflow
 
-- [references/project-readme-template.md](references/project-readme-template.md) — Template for project-level READMEs (applications, services, tools). Read when drafting a project README.
-- [references/library-readme-template.md](references/library-readme-template.md) — Template for library/package READMEs (npm, PyPI, Go modules). Read when drafting a library README.
-- [references/writing-guide.md](references/writing-guide.md) — Writing rules, tagline formulas, badge guidance, quality checklists, anti-patterns. Read when drafting or reviewing any README.
+1. If `README.md` exists and is non-trivial (≥20 lines), **update** — preserve voice, structure, and ordering; edit in place.
+2. Otherwise **generate** from the codebase: manifests, entry points, scripts, public API surface.
+3. Verify every command and path you write actually exists.
 
-## Process
+## Hard rules
 
-1. Determine **README type** and **workflow**
-2. Read the corresponding workflow reference
-3. Follow the workflow steps
-4. Present the result
-
-### Determine README Type
-
-| Signal | Type |
-|--------|------|
-| Has a UI, runs as a service, or is deployed | **Project-level** → read [project-readme-template.md](references/project-readme-template.md) |
-| Installed as a dependency or published to a registry | **Library/package** → read [library-readme-template.md](references/library-readme-template.md) |
-| Monorepo with both | Project-level at root, library-level in each package |
-
-If ambiguous, ask.
-
-### Determine Workflow
-
-| Situation | Workflow |
-|-----------|----------|
-| No README.md or user asks to "write" / "create" / "generate" | **Generate** → read [generate-readme.md](references/workflows/generate-readme.md) |
-| README.md exists and user asks to "update" / "improve" / "fix" | **Update** → read [update-readme.md](references/workflows/update-readme.md) |
-| README.md exists but nearly empty (< 20 lines) | **Generate** |
-
-## Edge Cases
-
-If the project has no code yet:
-  → Minimal README with name, description, goals, "Coming Soon." Pull from `.product/prd/` if available.
-
-If the user wants implementation details:
-  → READMEs are for users. Suggest linking to `docs/development/architecture/`. Defer if they insist.
-
-If monorepo:
-  → Offer root README + individual package READMEs.
-
-If the README would exceed ~400 lines:
-  → Move detailed content to linked docs.
-
-If minimal codebase (no tests, no docs):
-  → Rely on code structure and manifests. Flag low-confidence sections.
+- No architecture, internals, or contributor docs in a README. If asked, link to `docs/` instead.
+- Never invent badges, install commands, or examples that aren't grounded in the repo.
+- If the project has no code yet, write a minimal README (name, one-line goal, "Coming Soon") and stop.
