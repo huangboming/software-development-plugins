@@ -4,7 +4,7 @@ A Claude Code plugin marketplace that guides agents through the full software pr
 
 ## About
 
-This repository is a [Claude Code](https://claude.com/claude-code) **plugin marketplace**: a bundle of seven plugins that each cover one phase of the software product loop. Every plugin ships skills (auto-invoked playbooks) and agents (task-scoped subagents) so a Claude Code session can move from "what should we build?" to "what did shipping teach us?" without leaving the tool.
+This repository is a [Claude Code](https://claude.com/claude-code) **plugin marketplace**: a bundle of six plugins that each cover one phase of the software product loop. Every plugin ships skills (auto-invoked playbooks) and agents (task-scoped subagents) so a Claude Code session can move from "what should we build?" to "what did shipping teach us?" without leaving the tool.
 
 ### The Plugins
 
@@ -14,7 +14,6 @@ This repository is a [Claude Code](https://claude.com/claude-code) **plugin mark
 | [`design`](plugins/design) | Technical design | Resolve product intent into a concrete technical approach grounded in the existing codebase (design specs, spec review, code exploration). |
 | [`build`](plugins/build) | Execution | Turn decisions into working software with version-control hygiene (scaffold, commit, simplify, guard tests/boundaries, create PRs, clean up branches). |
 | [`ship`](plugins/ship) | Release | Package and publish finished changes (tag release, GitHub release, changelog, release notes, README, CI/CD pipelines). |
-| [`docs`](plugins/docs) | Documentation | Generate developer- and stakeholder-facing docs (API docs, architecture docs). |
 | [`harness`](plugins/harness) | Agent tuning | Tune the project itself to host AI agents well (skills, subagents, hooks, rules, design system docs). |
 | [`misc`](plugins/misc) | Utilities | Miscellaneous helpers that don't belong to a single phase (git activity summaries, source-finding researcher agent). |
 
@@ -34,7 +33,6 @@ claude plugin marketplace add huangboming/software-development-plugins --scope p
 claude plugin install build@software-development-plugins
 claude plugin install define@software-development-plugins
 claude plugin install design@software-development-plugins
-claude plugin install docs@software-development-plugins
 claude plugin install harness@software-development-plugins
 claude plugin install misc@software-development-plugins
 claude plugin install ship@software-development-plugins

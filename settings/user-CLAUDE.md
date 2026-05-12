@@ -25,14 +25,15 @@ Reaching shared understanding is the highest priority before any action.
 - Map out module dependencies and proactively identify edge cases and potential failure modes during the design phase, not as an afterthought.
 - Read and understand existing code and context before proposing changes.
 - Simplicity First. Prefer the simplest solution that correctly solves the problem. Make the smallest change that correctly addresses the requirement. Constantly evaluate the blast radius. Avoid over-engineering.
-- Always verify changes work before declaring a task complete.
 - Design by contract. Define interfaces and APIs before internals — inputs, outputs, and side effects must be explicit and isolated.
 - Respect architectural boundaries. Maintain strict separation of concerns. Do not bypass established layers just for a quick fix. Keep the data flow predictable and unidirectional where applicable.
 - Aim for high cohesion and low coupling. Modules should do one thing well.
 - Be deliberate about state management. Define a single source of truth. Keep state localized and immutable. Prefer pure functions for data transformations.
 - Code structure should reflect the business domain, not just technical layers.
+- Code as documentation instead of long, useless comments
 - Keep the core business rules pure and isolated. Decouple them from infrastructure, framework specifics, and external APIs using clear boundaries.
 - Class, function, and variable names must use business domain terminology. Avoid generic terms when a precise business term exists.
+- Always verify changes work before declaring a task complete.
 
 ## Tooling Stack
 
@@ -40,7 +41,7 @@ Reaching shared understanding is the highest priority before any action.
 
 - Explore:
   - project language distribution, scale, and complexity: Use `tokei` to quickly gather codebase statistics (languages, lines of code)
-  - directory structure: Prefer `eza --tree -L <level> --git` over `tree` or `ls`. It provides a clean tree view, respects .gitignore by default, and integrates file-level Git status
+  - directory structure: Prefer `eza --tree -L <level> --git-ignore` over `tree` or `ls`. It provides a clean tree view, respects .gitignore
   - file search: prefer `fd` over `find`
   - content search: prefer `rg` (ripgrep) over `grep`
   - AST/structural search: Prefer `ast-grep` (`sg`) over `sed` or raw regex for complex code refactoring and structural searching.
@@ -50,7 +51,7 @@ Reaching shared understanding is the highest priority before any action.
   - use `jq` to parse, filter, and extract data from JSON files or API responses
   - use `yq` for querying and manipulating YAML files
 - API:
-  - prefer `httpie` (`http`) over `curl` for testing endpoints. It provides cleaner syntax and automatically formatted JSON responses. If `curl` is necessary, ALWAYS use `-s` (silent) to suppress progress meters
+  - prefer `httpie` (`http`) over `curl`. It provides cleaner syntax and automatically formatted JSON responses. If `curl` is necessary, ALWAYS use `-s` (silent) to suppress progress meters
 - Python ecosystem: Prefer `uv` over raw `python3` or `pip`
   - Use `uvx` for temporary tools
   - Use `uv tool install` for long-term tools (when `brew` is not applicable)

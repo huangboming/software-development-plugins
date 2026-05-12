@@ -1,8 +1,0 @@
-{
-    "name": "docs",
-    "version": "0.1.0",
-    "description": "Make the system legible to the humans around it — generate developer- and stakeholder-facing documentation so new contributors ramp faster and non-technical partners can reason about what the software does.",
-    "author": {
-        "name": "Boming Huang"
-    }
-}

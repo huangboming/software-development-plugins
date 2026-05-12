@@ -2,7 +2,7 @@
 
 ## Overview
 
-A Claude Code plugin marketplace. Seven plugins (`define`, `design`, `build`, `ship`, `docs`, `harness`, `misc`) cover the software product loop, each shipping skills (auto-invoked playbooks) and agents (task-scoped subagents).
+A Claude Code plugin marketplace. Six plugins (`define`, `design`, `build`, `ship`, `harness`, `misc`) cover the software product loop, each shipping skills (auto-invoked playbooks) and agents (task-scoped subagents).
 
 ## Commands
 
