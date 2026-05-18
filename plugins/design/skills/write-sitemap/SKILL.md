@@ -1,6 +1,6 @@
 ---
 name: write-sitemap
-description: "Write a sitemap artifact at .product/design/sitemap.md covering page inventory, sitemap diagram (mermaid), and edge pages. Pages only — no JTBDs, business outcomes, or design principles. Triggers: '/write-sitemap', 'create a sitemap', 'list the pages', 'page inventory for [product]', 'site structure'. Hand off feature tech specs to design:write-spec, visual tokens to harness:write-design-system."
+description: "Write a sitemap artifact at .product/design/sitemap.md covering page inventory, sitemap diagram (mermaid), and edge pages. Pages only — no JTBDs, business outcomes, or design principles. Triggers: '/write-sitemap', 'create a sitemap', 'list the pages', 'page inventory for [product]', 'site structure'. Hand off feature tech specs to design:write-spec, visual tokens to design:create-design-md."
 ---
 
 ## Process
@@ -11,7 +11,7 @@ description: "Write a sitemap artifact at .product/design/sitemap.md covering pa
 
 ## Hard constraints
 
-- **Pages only.** No JTBDs, business outcomes, nav paradigms, design principles. Those live in `define:write-product-md` or `harness:write-design-system`.
+- **Pages only.** No JTBDs, business outcomes, nav paradigms, design principles. Those live in `define:write-product-md` or `design:create-design-md`.
 - **One file per site.** Multi-surface products (marketing + app + docs) suffix the filename: `sitemap-marketing.md`, `sitemap-app.md`.
 
 ## Template
