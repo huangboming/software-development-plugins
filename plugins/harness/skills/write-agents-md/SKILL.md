@@ -64,7 +64,7 @@ Body sections: **Summary** · **Problem** · **Proposed Solution** · **Key Chan
 ## Release *(omit if no release process)*
 
 1. Update `CHANGELOG.md` (Keep a Changelog format).
-2. Bump version in manifest files.
+2. Let user decide version(patch,minor,major) then bump version in manifest files.
 3. Annotated tag: `git tag -a v<version> -m "<summary>"`.
 4. Push tag: `git push origin v<version>`.
 5. `gh release create v<version>` — confirm before publishing.
